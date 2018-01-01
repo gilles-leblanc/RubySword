@@ -16,6 +16,8 @@ namespace DataScraper
 
         static void Main(string[] args)
         {
+            Directory.CreateDirectory("./output");
+
             httpClient = new HttpClient();
 
             var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
