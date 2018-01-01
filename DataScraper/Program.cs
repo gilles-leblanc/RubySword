@@ -28,16 +28,26 @@ namespace DataScraper
             IConfigurationSection monsterUrlsSection = Configuration.GetSection("monsterUrls");
             var monsterUrls = monsterUrlsSection.AsEnumerable();
 
-            monsterUrls.Where(x => !string.IsNullOrWhiteSpace(x.Value))
-                       //.Select(hub => DownloadPage(hub.Value))
-                       //.SelectMany(html => GetAllLinks(html))
-                       //.Where(link => IsMonsterPageLink(link))
-                       //.Select(mob => DownloadPage(mob))
-                       .Select(mob => DownloadPage("http://www.d20pfsrd.com/bestiary/monster-listings/constructs/clockwork/clockwork-reliquary/"))
-                       .Where(html => IsValidMonster(html))
-                       .Select(html => new Monster(html))
-                       .ToList()
-                       .ForEach(x => WriteToFile(x));
+            var monstersHtml = 
+                monsterUrls.Where(x => !string.IsNullOrWhiteSpace(x.Value))
+                           .Select(hub => DownloadPage(hub.Value))
+                           .SelectMany(html => GetAllLinks(html))
+                           .Where(link => IsMonsterPageLink(link))
+                           .Select(mob => DownloadPage(mob))
+                           //.Select(mob => DownloadPage("http://www.d20pfsrd.com/bestiary/monster-listings/outsiders/aasimar"))
+                           .Where(html => IsValidMonster(html));
+
+            foreach (var monsterHtml in monstersHtml)
+            {
+                try
+                {
+                    WriteToFile(new Monster(monsterHtml));
+                }
+                catch (Exception)
+                {
+                    File.AppendAllText("./output/errors.log", monsterHtml + "\n\n\n\n");
+                }
+            }
         }
 
         private static string DownloadPage(string url)
@@ -64,7 +74,7 @@ namespace DataScraper
 
         private static bool IsMonsterPageLink(string link) => link.Contains("/bestiary/monster-listings/");
 
-        private static bool IsValidMonster(string html) => html.Contains("XP ") && html.Contains("Init ");
+        private static bool IsValidMonster(string html) => html.Contains("XP") && html.Contains("Init");
 
         private static void WriteToFile(Monster monster) => File.WriteAllText($"./output/{monster.Name}.json", monster.ToJson());
     }

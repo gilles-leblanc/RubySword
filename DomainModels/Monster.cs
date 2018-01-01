@@ -10,10 +10,10 @@ namespace DataScraper.Models
     {
         public string Name { get; set; }
 
-        public string Description { get; set; }
+        private const string languages = "Languages";
+        public List<string> Languages { get; set; }
 
-        public string Languages { get; set; }
-
+        private const string skills = "Skills";
         public List<string> Skills { get; set; }
 
         private const string ac = "AC";
@@ -63,7 +63,8 @@ namespace DataScraper.Models
 
             var statsBlock = document.DocumentNode
                                      .Descendants("p")
-                                     .FirstOrDefault(p => p.InnerHtml.Contains("Str "));
+                                     .FirstOrDefault(p => p.InnerHtml.Contains("Str ") ||
+                                                          p.InnerHtml.Contains("Str<"));
 
             if (statsBlock == null)
                 throw new InvalidOperationException("Could not find stats block.");
@@ -75,9 +76,15 @@ namespace DataScraper.Models
             Wis = GetStat(statsBlock, wis);
             Cha = GetStat(statsBlock, cha);
 
+            //Languages = GetEntryList(statsBlock, languages);
+            //Skills = GetEntryList(statsBlock, skills);
+
             var defensesBlock = document.DocumentNode
                                        .Descendants("p")
-                                       .FirstOrDefault(p => p.InnerHtml.Contains("Fort "));
+                                       .FirstOrDefault(p => p.InnerHtml.Contains("Fort"));
+
+            if (defensesBlock == null)
+                throw new InvalidOperationException("Could not find defenses block.");
 
             Ac = GetStat(defensesBlock, ac);
             Hp = GetStat(defensesBlock, hp);
@@ -89,30 +96,50 @@ namespace DataScraper.Models
         private static int GetStat(HtmlNode statsBlock, string stat)
         {
             string candidate = string.Empty;
-            string delimeter = stat + " ";
 
-            var possibleValue = statsBlock.Descendants()
-                                          .SingleOrDefault(d => d.Name == "b" && d.InnerHtml == delimeter)
+            var possibleValue = statsBlock.Descendants("b")
+                                          .FirstOrDefault(d => d.InnerHtml.Contains(stat))
                                           ?.NextSibling
                                           ?.InnerText
-                                          .TakeWhile(c => c != ',' && c != '(');
+                                          .TakeWhile(c => !IsStatDelimeter(c));
 
             if (possibleValue != null)
-                candidate = string.Concat(possibleValue).Replace('—', '0').Trim();
+                candidate = string.Concat(possibleValue);
             else
             {
                 string innerText = statsBlock.InnerText;
+                string delimeter = stat + " ";
+
                 candidate = string.Concat(innerText.Substring(innerText.IndexOf(delimeter))
-                                                   .TakeWhile(c => c != ','))
+                                                   .TakeWhile(c => !IsStatDelimeter(c)))
                                   .Substring(delimeter.Length);
             }
 
+            string sanitizedCandidate = candidate.Replace('—', '0')
+                                                 .Replace('–', '0')
+                                                 .Replace("+", string.Empty)
+                                                 .Trim();
+
             int parsedValue = 0;
-            if (!int.TryParse(candidate, out parsedValue))
-                throw new InvalidOperationException($"Could not parse '{possibleValue}' for stat '{stat}' in statsblock: {statsBlock}.");
+            if (!int.TryParse(sanitizedCandidate, out parsedValue))
+                throw new InvalidOperationException($"Could not parse '{sanitizedCandidate}' for stat '{stat}' in statsblock: {statsBlock}.");
 
             return parsedValue;
         }
+
+        private static bool IsStatDelimeter(char c) => c == ',' || c == '(' || c == ';';
+
+        //private static List<string> GetEntryList(HtmlNode statsBlock, string stat)
+        //{
+        //    var possibleValue = statsBlock.Descendants()
+        //                                  .SingleOrDefault(d => d.Name == "b" && d.InnerHtml.Contains(stat));
+        //                                  //?.NextSibling
+        //                                  //?.InnerText
+        //                                  //.TakeWhile(c => !IsStatDelimeter(c));
+
+
+        //    throw new NotImplementedException();
+        //}
 
         public string ToJson() => JsonConvert.SerializeObject(this);
     }
