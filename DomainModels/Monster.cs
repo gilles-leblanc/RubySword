@@ -57,7 +57,12 @@ namespace DataScraper.Models
             Name = document.DocumentNode
                            .Descendants("h1")
                            .First()
-                           .InnerText;
+                           .InnerText
+                           .Replace("(3pp)", "")
+                           .Replace("(3pp-FGG)", "")
+                           .Replace("(3PP-FGG)", "")
+                           .Replace("(3pp-FF)", "")
+                           .Trim();
 
             var statsBlock = GetBlock(document, StatsBlockSpecification());
 
