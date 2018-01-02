@@ -3,17 +3,16 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace DataScraper.Models
 {
     public class Monster
     {
+        private const string rxNonDigits = @"[^\d]+";
+
         public string Name { get; set; }
 
-        private const string languages = "Languages";
-        public List<string> Languages { get; set; }
-
-        private const string skills = "Skills";
         public List<string> Skills { get; set; }
 
         private const string ac = "AC";
@@ -49,7 +48,6 @@ namespace DataScraper.Models
         private const string will = "Will";
         public int Will { get; set; }
 
-        // TODO: attacks
 
         public Monster(string html)
         {
@@ -61,13 +59,10 @@ namespace DataScraper.Models
                            .First()
                            .InnerText;
 
-            var statsBlock = document.DocumentNode
-                                     .Descendants("p")
-                                     .FirstOrDefault(p => p.InnerHtml.Contains("Str ") ||
-                                                          p.InnerHtml.Contains("Str<"));
+            var statsBlock = GetBlock(document, StatsBlockSpecification());
 
             if (statsBlock == null)
-                throw new InvalidOperationException("Could not find stats block.");
+                throw new InvalidOperationException($"Could not find stats block for {Name}.");
 
             Str = GetStat(statsBlock, str);
             Dex = GetStat(statsBlock, dex);
@@ -76,21 +71,36 @@ namespace DataScraper.Models
             Wis = GetStat(statsBlock, wis);
             Cha = GetStat(statsBlock, cha);
 
-            //Languages = GetEntryList(statsBlock, languages);
-            //Skills = GetEntryList(statsBlock, skills);
+            Skills = GetSkills(document);
 
-            var defensesBlock = document.DocumentNode
-                                       .Descendants("p")
-                                       .FirstOrDefault(p => p.InnerHtml.Contains("Fort"));
+            var defensesBlock = GetBlock(document, DefensesBlockSpecification());
 
             if (defensesBlock == null)
-                throw new InvalidOperationException("Could not find defenses block.");
+                throw new InvalidOperationException($"Could not find defenses block for {Name}.");
 
             Ac = GetStat(defensesBlock, ac);
             Hp = GetStat(defensesBlock, hp);
             Fortitude = GetStat(defensesBlock, fort);
             Reflex = GetStat(defensesBlock, @ref);
             Will = GetStat(defensesBlock, will);
+        }
+
+        private Func<HtmlNode, bool> StatsBlockSpecification() => p => p.InnerHtml.Contains("Str ") || p.InnerHtml.Contains("Str<");
+
+        private Func<HtmlNode, bool> DefensesBlockSpecification() => p => p.InnerHtml.Contains("Fort");
+
+        private static HtmlNode GetBlock(HtmlDocument document, Func<HtmlNode, bool> blockSpecification)
+        {
+
+            // First try to get the block with the p element which is more specific
+            // baring that try a less specific search which might return the whole html document.
+            return document.DocumentNode
+                           .Descendants("p")
+                           .FirstOrDefault(p => blockSpecification(p))
+                   ??
+                   document.DocumentNode
+                           .Descendants()
+                           .FirstOrDefault(p => blockSpecification(p));
         }
 
         private static int GetStat(HtmlNode statsBlock, string stat)
@@ -105,7 +115,8 @@ namespace DataScraper.Models
 
             if (possibleValue != null)
                 candidate = string.Concat(possibleValue);
-            else
+
+            if (string.IsNullOrWhiteSpace(candidate))
             {
                 string innerText = statsBlock.InnerText;
                 string delimeter = stat + " ";
@@ -115,31 +126,35 @@ namespace DataScraper.Models
                                   .Substring(delimeter.Length);
             }
 
-            string sanitizedCandidate = candidate.Replace('—', '0')
-                                                 .Replace('–', '0')
-                                                 .Replace("+", string.Empty)
-                                                 .Trim();
+            string sanitizedCandidate = Regex.Replace(candidate.Replace('—', '0')
+                                                               .Replace('–', '0')
+                                                               .Trim(),
+                                                      rxNonDigits,
+                                                      "");
 
             int parsedValue = 0;
             if (!int.TryParse(sanitizedCandidate, out parsedValue))
                 throw new InvalidOperationException($"Could not parse '{sanitizedCandidate}' for stat '{stat}' in statsblock: {statsBlock}.");
 
-            return parsedValue;
-        }
+            return Math.Abs(parsedValue);
+        }        
 
         private static bool IsStatDelimeter(char c) => c == ',' || c == '(' || c == ';';
 
-        //private static List<string> GetEntryList(HtmlNode statsBlock, string stat)
-        //{
-        //    var possibleValue = statsBlock.Descendants()
-        //                                  .SingleOrDefault(d => d.Name == "b" && d.InnerHtml.Contains(stat));
-        //                                  //?.NextSibling
-        //                                  //?.InnerText
-        //                                  //.TakeWhile(c => !IsStatDelimeter(c));
+        private static List<string> GetSkills(HtmlDocument document)
+        {
+            var skills = document.DocumentNode
+                                 .SelectNodes("//a[@href]")
+                                 .Where(a => a.GetAttributeValue("href", null)
+                                              .ToLower()
+                                              .Contains("/skills/"))
+                                 .Select(a => a.InnerText)
+                                 .Where(a => a.ToLower() != "skills")
+                                 .Distinct()
+                                 .OrderBy(a => a);
 
-
-        //    throw new NotImplementedException();
-        //}
+            return skills.ToList();
+        }
 
         public string ToJson() => JsonConvert.SerializeObject(this);
     }

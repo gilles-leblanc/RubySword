@@ -34,7 +34,7 @@ namespace DataScraper
                            .SelectMany(html => GetAllLinks(html))
                            .Where(link => IsMonsterPageLink(link))
                            .Select(mob => DownloadPage(mob))
-                           //.Select(mob => DownloadPage("http://www.d20pfsrd.com/bestiary/monster-listings/outsiders/aasimar"))
+                           //.Select(mob => DownloadPage("http://www.d20pfsrd.com/bestiary/monster-listings/magical-beasts/Afanc-smg/"))
                            .Where(html => IsValidMonster(html));
 
             foreach (var monsterHtml in monstersHtml)
@@ -43,9 +43,11 @@ namespace DataScraper
                 {
                     WriteToFile(new Monster(monsterHtml));
                 }
-                catch (Exception)
+                catch (Exception exception)
                 {
-                    File.AppendAllText("./output/errors.log", monsterHtml + "\n\n\n\n");
+                    File.AppendAllText("./output/errors.log", 
+                                       exception.Message + "\n\n\n\n" +
+                                       monsterHtml + "\n\n*********************************************************************\n\n");
                 }
             }
         }

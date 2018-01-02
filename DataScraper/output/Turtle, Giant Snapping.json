@@ -1,1 +1,1 @@
-{"Name":"Turtle, Giant Snapping","Languages":null,"Skills":null,"Ac":23,"Hp":115,"Str":32,"Dex":6,"Con":21,"Int":1,"Wis":13,"Cha":6,"Fortitude":12,"Reflex":5,"Will":6}
+{"Name":"Turtle, Giant Snapping","Skills":["Perception","Swim"],"Ac":23,"Hp":115,"Str":32,"Dex":6,"Con":21,"Int":1,"Wis":13,"Cha":6,"Fortitude":12,"Reflex":5,"Will":6}

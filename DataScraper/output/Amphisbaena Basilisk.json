@@ -1,1 +1,1 @@
-{"Name":"Amphisbaena Basilisk","Languages":null,"Skills":null,"Ac":16,"Hp":85,"Str":20,"Dex":6,"Con":17,"Int":2,"Wis":13,"Cha":11,"Fortitude":12,"Reflex":5,"Will":6}
+{"Name":"Amphisbaena Basilisk","Skills":["Perception","Stealth"],"Ac":16,"Hp":85,"Str":20,"Dex":6,"Con":17,"Int":2,"Wis":13,"Cha":11,"Fortitude":12,"Reflex":5,"Will":6}

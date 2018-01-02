@@ -1,1 +1,1 @@
-{"Name":"Snake, Viper","Languages":null,"Skills":null,"Ac":16,"Hp":3,"Str":4,"Dex":17,"Con":8,"Int":1,"Wis":13,"Cha":2,"Fortitude":1,"Reflex":5,"Will":1}
+{"Name":"Snake, Viper","Skills":["Climb","Perception","Stealth","Swim"],"Ac":16,"Hp":3,"Str":4,"Dex":17,"Con":8,"Int":1,"Wis":13,"Cha":2,"Fortitude":1,"Reflex":5,"Will":1}

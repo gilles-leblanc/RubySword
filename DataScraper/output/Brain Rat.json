@@ -1,1 +1,1 @@
-{"Name":"Brain Rat","Languages":null,"Skills":null,"Ac":14,"Hp":5,"Str":2,"Dex":15,"Con":10,"Int":14,"Wis":14,"Cha":12,"Fortitude":2,"Reflex":4,"Will":2}
+{"Name":"Brain Rat","Skills":["Climb","Perception","Stealth","Swim"],"Ac":14,"Hp":5,"Str":2,"Dex":15,"Con":10,"Int":14,"Wis":14,"Cha":12,"Fortitude":2,"Reflex":4,"Will":2}

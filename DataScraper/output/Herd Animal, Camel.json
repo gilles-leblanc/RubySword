@@ -1,1 +1,1 @@
-{"Name":"Herd Animal, Camel","Languages":null,"Skills":null,"Ac":13,"Hp":13,"Str":18,"Dex":16,"Con":14,"Int":2,"Wis":11,"Cha":4,"Fortitude":5,"Reflex":6,"Will":0}
+{"Name":"Herd Animal, Camel","Skills":["Perception"],"Ac":13,"Hp":13,"Str":18,"Dex":16,"Con":14,"Int":2,"Wis":11,"Cha":4,"Fortitude":5,"Reflex":6,"Will":0}

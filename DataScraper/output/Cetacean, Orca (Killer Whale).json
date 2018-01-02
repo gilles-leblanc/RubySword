@@ -1,1 +1,1 @@
-{"Name":"Cetacean, Orca (Killer Whale)","Languages":null,"Skills":null,"Ac":16,"Hp":67,"Str":27,"Dex":15,"Con":16,"Int":2,"Wis":15,"Cha":6,"Fortitude":9,"Reflex":8,"Will":5}
+{"Name":"Cetacean, Orca (Killer Whale)","Skills":["Perception","Swim"],"Ac":16,"Hp":67,"Str":27,"Dex":15,"Con":16,"Int":2,"Wis":15,"Cha":6,"Fortitude":9,"Reflex":8,"Will":5}

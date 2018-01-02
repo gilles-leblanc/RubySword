@@ -1,1 +1,1 @@
-{"Name":"Fish, Pike, Giant","Languages":null,"Skills":null,"Ac":16,"Hp":39,"Str":15,"Dex":18,"Con":15,"Int":1,"Wis":12,"Cha":2,"Fortitude":7,"Reflex":9,"Will":3}
+{"Name":"Fish, Pike, Giant","Skills":["Perception","Swim"],"Ac":16,"Hp":39,"Str":15,"Dex":18,"Con":15,"Int":1,"Wis":12,"Cha":2,"Fortitude":7,"Reflex":9,"Will":3}

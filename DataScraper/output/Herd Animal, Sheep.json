@@ -1,1 +1,1 @@
-{"Name":"Herd Animal, Sheep","Languages":null,"Skills":null,"Ac":13,"Hp":11,"Str":10,"Dex":13,"Con":12,"Int":1,"Wis":11,"Cha":4,"Fortitude":4,"Reflex":4,"Will":0}
+{"Name":"Herd Animal, Sheep","Skills":["Perception"],"Ac":13,"Hp":11,"Str":10,"Dex":13,"Con":12,"Int":1,"Wis":11,"Cha":4,"Fortitude":4,"Reflex":4,"Will":0}

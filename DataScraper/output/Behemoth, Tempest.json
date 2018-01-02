@@ -1,1 +1,1 @@
-{"Name":"Behemoth, Tempest","Languages":null,"Skills":null,"Ac":40,"Hp":445,"Str":43,"Dex":21,"Con":26,"Int":3,"Wis":16,"Cha":14,"Fortitude":26,"Reflex":23,"Will":16}
+{"Name":"Behemoth, Tempest","Skills":["Fly","Perception","Stealth","Survival"],"Ac":40,"Hp":445,"Str":43,"Dex":21,"Con":26,"Int":3,"Wis":16,"Cha":14,"Fortitude":26,"Reflex":23,"Will":16}

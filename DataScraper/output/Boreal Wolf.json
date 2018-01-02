@@ -1,1 +1,1 @@
-{"Name":"Boreal Wolf","Languages":null,"Skills":null,"Ac":14,"Hp":15,"Str":15,"Dex":15,"Con":17,"Int":2,"Wis":12,"Cha":6,"Fortitude":6,"Reflex":5,"Will":1}
+{"Name":"Boreal Wolf","Skills":["Perception","Stealth","Survival"],"Ac":14,"Hp":15,"Str":15,"Dex":15,"Con":17,"Int":2,"Wis":12,"Cha":6,"Fortitude":6,"Reflex":5,"Will":1}

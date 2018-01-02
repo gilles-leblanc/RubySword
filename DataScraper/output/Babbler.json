@@ -1,1 +1,1 @@
-{"Name":"Babbler","Languages":null,"Skills":null,"Ac":14,"Hp":30,"Str":18,"Dex":13,"Con":12,"Int":10,"Wis":14,"Cha":11,"Fortitude":6,"Reflex":5,"Will":3}
+{"Name":"Babbler","Skills":["Acrobatics","Climb","Perception","Stealth","Swim"],"Ac":14,"Hp":30,"Str":18,"Dex":13,"Con":12,"Int":10,"Wis":14,"Cha":11,"Fortitude":6,"Reflex":5,"Will":3}
