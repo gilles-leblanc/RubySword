@@ -147,10 +147,12 @@ namespace DataScraper.Models
                                  .SelectNodes("//a[@href]")
                                  .Where(a => a.GetAttributeValue("href", null)
                                               .ToLower()
-                                              .Contains("/skills/"))
-                                 .Select(a => a.InnerText)
-                                 .Where(a => a.ToLower() != "skills")
-                                 .Distinct()
+                                              .Contains("/skills/")                                             // find all skills links
+                                          && (a?.NextSibling?.InnerText?.Contains("+")).GetValueOrDefault()
+                                          && !(a?.NextSibling?.InnerText?.Contains("+0")).GetValueOrDefault())  // check that the skill is positive
+                                 .Select(a => a.InnerText)                                                      // read skill name
+                                 .Where(a => a.ToLower() != "skills")                                           // filter out links to the skills section
+                                 .Distinct()                                                            
                                  .OrderBy(a => a);
 
             return skills.ToList();
