@@ -1,4 +1,4 @@
-﻿using DataScraper.Models;
+﻿using DomainModels;
 using HtmlAgilityPack;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -30,18 +30,18 @@ namespace DataScraper
 
             var monstersHtml = 
                 monsterUrls.Where(x => !string.IsNullOrWhiteSpace(x.Value))
-                           //.Select(hub => DownloadPage(hub.Value))
-                           //.SelectMany(html => GetAllLinks(html))
-                           //.Where(link => IsMonsterPageLink(link))
-                           //.Select(mob => DownloadPage(mob))
-                           .Select(mob => DownloadPage("http://www.d20pfsrd.com/bestiary/monster-listings/outsiders/devil/erinyes"))
+                           .Select(hub => DownloadPage(hub.Value))
+                           .SelectMany(html => GetAllLinks(html))
+                           .Where(link => IsMonsterPageLink(link))
+                           .Select(mob => DownloadPage(mob))
+                           //.Select(mob => DownloadPage("http://www.d20pfsrd.com/bestiary/monster-listings/animals/hippopotamus-tohc/"))
                            .Where(html => IsValidMonster(html));
 
             foreach (var monsterHtml in monstersHtml)
             {
                 try
                 {
-                    WriteToFile(new Monster(monsterHtml));
+                    WriteToFile(new D20Monster(monsterHtml));
                 }
                 catch (Exception exception)
                 {
@@ -78,6 +78,6 @@ namespace DataScraper
 
         private static bool IsValidMonster(string html) => html.Contains("XP") && html.Contains("Init");
 
-        private static void WriteToFile(Monster monster) => File.WriteAllText($"./output/{monster.Name}.json", monster.ToJson());
+        private static void WriteToFile(D20Monster monster) => File.WriteAllText($"./output/{monster.Name}.json", monster.ToJson());
     }
 }

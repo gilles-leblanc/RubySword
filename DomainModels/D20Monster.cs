@@ -1,14 +1,13 @@
-﻿using DomainModels;
-using HtmlAgilityPack;
+﻿using HtmlAgilityPack;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace DataScraper.Models
+namespace DomainModels
 {
-    public class Monster
+    public class D20Monster
     {
         private const string rxNonDigits = @"[^\d]+";
 
@@ -53,8 +52,12 @@ namespace DataScraper.Models
 
         public List<Attack> RangedAttacks { get; set; }
 
+        public D20Monster()
+        {
+            // Empty constructor for deserialization
+        }
 
-        public Monster(string html)
+        public D20Monster(string html)
         {
             var document = new HtmlDocument();
             document.LoadHtml(html);
@@ -152,9 +155,8 @@ namespace DataScraper.Models
 
             // before parsing remove non digit characters from the string to prevent errors
             sanitizedCandidate = Regex.Replace(sanitizedCandidate, rxNonDigits, "");
-
-            int parsedValue = 0;
-            if (!int.TryParse(sanitizedCandidate, out parsedValue))
+                        
+            if (!int.TryParse(sanitizedCandidate, out int parsedValue))
                 throw new InvalidOperationException($"Could not parse '{sanitizedCandidate}' for stat '{stat}' in statsblock: {statsBlock}.");
 
             return Math.Abs(parsedValue);

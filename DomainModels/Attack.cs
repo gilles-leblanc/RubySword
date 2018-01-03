@@ -16,7 +16,13 @@ namespace DomainModels
         public int AttackBonus { get; set; }
 
         public string OriginalText { get; set; }
-        
+
+
+        public Attack()
+        {
+            // Empty constructor for deserialization
+        }
+
         public static List<Attack> GetMeleeAttacks(HtmlDocument document) => GetAttacks(document, melee, ranged: false);
 
         public static List<Attack> GetRangedAttacks(HtmlDocument document) => GetAttacks(document, ranged, ranged: true);
