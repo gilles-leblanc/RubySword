@@ -1,4 +1,5 @@
-﻿using HtmlAgilityPack;
+﻿using DomainModels;
+using HtmlAgilityPack;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -48,6 +49,10 @@ namespace DataScraper.Models
         private const string will = "Will";
         public int Will { get; set; }
 
+        public List<Attack> MeleeAttacks { get; set; }
+
+        public List<Attack> RangedAttacks { get; set; }
+
 
         public Monster(string html)
         {
@@ -88,6 +93,9 @@ namespace DataScraper.Models
             Fortitude = GetStat(defensesBlock, fort);
             Reflex = GetStat(defensesBlock, @ref);
             Will = GetStat(defensesBlock, will);
+
+            MeleeAttacks = Attack.GetMeleeAttacks(document);
+            RangedAttacks = Attack.GetRangedAttacks(document);
         }
 
         private Func<HtmlNode, bool> StatsBlockSpecification() => p => p.InnerHtml.Contains("Str ") || p.InnerHtml.Contains("Str<");
@@ -96,7 +104,6 @@ namespace DataScraper.Models
 
         private static HtmlNode GetBlock(HtmlDocument document, Func<HtmlNode, bool> blockSpecification)
         {
-
             // First try to get the block with the p element which is more specific
             // baring that try a less specific search which might return the whole html document.
             return document.DocumentNode
