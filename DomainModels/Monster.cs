@@ -98,9 +98,13 @@ namespace DataScraper.Models
             RangedAttacks = Attack.GetRangedAttacks(document);
         }
 
-        private Func<HtmlNode, bool> StatsBlockSpecification() => p => p.InnerHtml.Contains("Str ") || p.InnerHtml.Contains("Str<");
+        private Func<HtmlNode, bool> StatsBlockSpecification() => p => (p.InnerHtml.Contains("Str"))
+                                                                    && (p.InnerHtml.Contains("Dex"))
+                                                                    && (p.InnerHtml.Contains("Wis"))
+                                                                    && (p.InnerHtml.Contains("Cha"));
 
-        private Func<HtmlNode, bool> DefensesBlockSpecification() => p => p.InnerHtml.Contains("Fort");
+        private Func<HtmlNode, bool> DefensesBlockSpecification() => p => p.InnerText.Contains("Fort") && p.InnerText.Contains("Ref") 
+                                                                       && p.InnerText.Contains("Will");
 
         private static HtmlNode GetBlock(HtmlDocument document, Func<HtmlNode, bool> blockSpecification)
         {
@@ -138,11 +142,16 @@ namespace DataScraper.Models
                                   .Substring(delimeter.Length);
             }
 
-            string sanitizedCandidate = Regex.Replace(candidate.Replace('—', '0')
-                                                               .Replace('–', '0')
-                                                               .Trim(),
-                                                      rxNonDigits,
-                                                      "");
+            string sanitizedCandidate = candidate.Replace('—', '0')
+                                                 .Replace('–', '0')
+                                                 .Replace('-', '0')
+                                                 .Trim();
+
+            // for the case where we have only a + sign, replace with a zero
+            sanitizedCandidate = sanitizedCandidate == "+" ? "0" : sanitizedCandidate;
+
+            // before parsing remove non digit characters from the string to prevent errors
+            sanitizedCandidate = Regex.Replace(sanitizedCandidate, rxNonDigits, "");
 
             int parsedValue = 0;
             if (!int.TryParse(sanitizedCandidate, out parsedValue))
