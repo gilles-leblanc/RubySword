@@ -1,1 +1,0 @@
-{"Name":"Cave Fisher","Skills":["Climb"],"Ac":15,"Hp":22,"Str":17,"Dex":12,"Con":17,"Int":0,"Wis":10,"Cha":4,"Fortitude":6,"Reflex":2,"Will":1,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" 2 claws +5 (1d4+3)"}],"RangedAttacks":[{"Ranged":true,"Name":null,"AttackBonus":0,"OriginalText":" filament +3 ("}]}

@@ -1,1 +1,0 @@
-{"Name":"Amalgamation","Skills":["Perception"],"Ac":25,"Hp":225,"Str":24,"Dex":28,"Con":0,"Int":0,"Wis":20,"Cha":1,"Fortitude":10,"Reflex":19,"Will":15,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" varies +33 (damage by weapon)"}],"RangedAttacks":[{"Ranged":true,"Name":null,"AttackBonus":0,"OriginalText":" varies +35 (damage by weapon)"}]}

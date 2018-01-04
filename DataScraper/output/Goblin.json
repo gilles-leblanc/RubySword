@@ -1,1 +1,0 @@
-{"Name":"Goblin","Skills":["Ride","Stealth","Swim"],"Ac":16,"Hp":6,"Str":11,"Dex":15,"Con":12,"Int":10,"Wis":9,"Cha":6,"Fortitude":3,"Reflex":2,"Will":1,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" short sword +2 (1d4/19–20)"}],"RangedAttacks":[{"Ranged":true,"Name":null,"AttackBonus":0,"OriginalText":" short bow +4 (1d4/×3)"}]}

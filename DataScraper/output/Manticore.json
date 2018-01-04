@@ -1,1 +1,0 @@
-{"Name":"Manticore","Skills":["Perception","Survival"],"Ac":17,"Hp":57,"Str":20,"Dex":15,"Con":18,"Int":7,"Wis":12,"Cha":9,"Fortitude":9,"Reflex":7,"Will":3,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" bite +10 (1d8+5), 2 claws +10 (2d4+5)"}],"RangedAttacks":[{"Ranged":true,"Name":null,"AttackBonus":0,"OriginalText":" 4 spikes +8 (1d6+5)"}]}

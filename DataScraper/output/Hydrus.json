@@ -1,1 +1,0 @@
-{"Name":"Hydrus","Skills":["Perception"],"Ac":18,"Hp":4,"Str":6,"Dex":21,"Con":10,"Int":2,"Wis":14,"Cha":5,"Fortitude":2,"Reflex":7,"Will":2,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" bite +7 (1d4-2 plus invasion)"}],"RangedAttacks":[{"Ranged":true,"Name":null,"AttackBonus":0,"OriginalText":" spittle +7 (poison)"}]}
