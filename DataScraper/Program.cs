@@ -16,14 +16,15 @@ namespace DataScraper
 
         static void Main(string[] args)
         {
-            Directory.CreateDirectory("./output");
-
             httpClient = new HttpClient();
 
             var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
                                                     .AddJsonFile("appsettings.json");
 
             Configuration = builder.Build();
+
+            IConfigurationSection outputDirectory = Configuration.GetSection("outputDirectory");
+            Directory.CreateDirectory(outputDirectory.Value);
 
             IConfigurationSection monsterUrlsSection = Configuration.GetSection("monsterUrls");
             var monsterUrls = monsterUrlsSection.AsEnumerable();

@@ -10,13 +10,14 @@ namespace DataConverter
         public static IConfigurationRoot Configuration { get; set; }
 
         static void Main(string[] args)
-        {
-            Directory.CreateDirectory("./output");
-
+        {           
             var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
                                         .AddJsonFile("appsettings.json");
 
             Configuration = builder.Build();
+
+            IConfigurationSection outputDirectory = Configuration.GetSection("outputDirectory");
+            Directory.CreateDirectory(outputDirectory.Value);
 
             IConfigurationSection inputDirectory = Configuration.GetSection("inputDirectory");
 
