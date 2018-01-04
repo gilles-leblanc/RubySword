@@ -1,0 +1,1 @@
+{"Name":"Hippopotamus","Skills":["Perception","Stealth","Swim"],"Ac":17,"Hp":59,"Str":19,"Dex":10,"Con":16,"Int":2,"Wis":13,"Cha":5,"Fortitude":8,"Reflex":5,"Will":3,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" bite +8 (2d8+6)"}],"RangedAttacks":[]}

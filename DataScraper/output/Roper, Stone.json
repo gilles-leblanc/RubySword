@@ -1,0 +1,1 @@
+{"Name":"Roper, Stone","Skills":["Climb","Knowledge","Perception","Stealth","Survival"],"Ac":22,"Hp":39,"Str":17,"Dex":15,"Con":14,"Int":12,"Wis":16,"Cha":12,"Fortitude":4,"Reflex":4,"Will":8,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" bite +7 (1d8+4)"}],"RangedAttacks":[{"Ranged":true,"Name":null,"AttackBonus":0,"OriginalText":" 6 strands +7 "}]}

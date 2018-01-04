@@ -1,0 +1,1 @@
+{"Name":"Orc, Greenskin","Skills":["Perception","Stealth"],"Ac":14,"Hp":7,"Str":15,"Dex":15,"Con":12,"Int":7,"Wis":8,"Cha":6,"Fortitude":3,"Reflex":2,"Will":1,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" longsword +3 (1d8+2/19-20)"}],"RangedAttacks":[{"Ranged":true,"Name":null,"AttackBonus":0,"OriginalText":" composite longbow (+2 "}]}

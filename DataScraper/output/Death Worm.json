@@ -1,0 +1,1 @@
+{"Name":"Death Worm","Skills":["Perception","Stealth"],"Ac":18,"Hp":66,"Str":18,"Dex":13,"Con":16,"Int":3,"Wis":11,"Cha":5,"Fortitude":8,"Reflex":6,"Will":4,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" bite +10 (1d8+6 plus 1d6 acid)"}],"RangedAttacks":[]}

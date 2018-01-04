@@ -1,0 +1,1 @@
+{"Name":"Orc, Black","Skills":["Intimidate"],"Ac":17,"Hp":8,"Str":19,"Dex":12,"Con":14,"Int":9,"Wis":8,"Cha":6,"Fortitude":4,"Reflex":1,"Will":1,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" longspear +5 (1d8+6/x3)"}],"RangedAttacks":[{"Ranged":true,"Name":null,"AttackBonus":0,"OriginalText":" light crossbow +2 (1d8, 19-20/x2)"}]}

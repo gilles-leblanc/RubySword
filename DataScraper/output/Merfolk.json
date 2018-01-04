@@ -1,0 +1,1 @@
+{"Name":"Merfolk","Skills":["Perception","Swim"],"Ac":13,"Hp":7,"Str":13,"Dex":13,"Con":14,"Int":10,"Wis":9,"Cha":10,"Fortitude":4,"Reflex":1,"Will":1,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" trident +2 (1d8+1)"}],"RangedAttacks":[{"Ranged":true,"Name":null,"AttackBonus":0,"OriginalText":" heavy crossbow +2 (1d10/19–20)"}]}

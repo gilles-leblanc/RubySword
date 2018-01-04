@@ -1,0 +1,1 @@
+{"Name":"Giant, Cave","Skills":["Climb","Perception","Survival"],"Ac":19,"Hp":126,"Str":26,"Dex":12,"Con":23,"Int":5,"Wis":11,"Cha":10,"Fortitude":14,"Reflex":5,"Will":6,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" Gargantuan "}],"RangedAttacks":[{"Ranged":true,"Name":null,"AttackBonus":0,"OriginalText":" rock +9 (2d6+12)"}]}

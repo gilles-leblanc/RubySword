@@ -1,0 +1,1 @@
+{"Name":"Clockwork Goliath","Skills":[],"Ac":35,"Hp":214,"Str":45,"Dex":20,"Con":0,"Int":0,"Wis":11,"Cha":1,"Fortitude":9,"Reflex":16,"Will":9,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" 4 slams +41 (3d6+17)"}],"RangedAttacks":[{"Ranged":true,"Name":null,"AttackBonus":0,"OriginalText":" cannon +29/+24/+19/+14 (6d6/x4)"}]}

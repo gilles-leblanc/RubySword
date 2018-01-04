@@ -1,0 +1,1 @@
+{"Name":"Sandman","Skills":["Knowledge","Perception","Sense Motive","Stealth","Use Magic Device"],"Ac":16,"Hp":30,"Str":14,"Dex":12,"Con":14,"Int":10,"Wis":11,"Cha":14,"Fortitude":6,"Reflex":2,"Will":4,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" slam +7 (1d4+3 plus sleep)"}],"RangedAttacks":[]}

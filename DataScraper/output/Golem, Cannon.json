@@ -1,0 +1,1 @@
+{"Name":"Golem, Cannon","Skills":["Perception"],"Ac":31,"Hp":140,"Str":30,"Dex":24,"Con":0,"Int":0,"Wis":15,"Cha":2,"Fortitude":6,"Reflex":13,"Will":8,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" 2 slams +29 (2d10+10)"}],"RangedAttacks":[{"Ranged":true,"Name":null,"AttackBonus":0,"OriginalText":" cannon +26/+21 (6d6+7/19-20/x4)"}]}

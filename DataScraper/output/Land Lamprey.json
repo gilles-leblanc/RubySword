@@ -1,0 +1,1 @@
+{"Name":"Land Lamprey","Skills":["Perception","Stealth"],"Ac":16,"Hp":5,"Str":8,"Dex":14,"Con":11,"Int":1,"Wis":12,"Cha":2,"Fortitude":2,"Reflex":4,"Will":1,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" bite +3 (1d3-1 plus attach)"}],"RangedAttacks":[]}

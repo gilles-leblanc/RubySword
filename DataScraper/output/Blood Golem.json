@@ -1,0 +1,1 @@
+{"Name":"Blood Golem","Skills":["Perception","Swim"],"Ac":16,"Hp":38,"Str":17,"Dex":12,"Con":10,"Int":2,"Wis":11,"Cha":1,"Fortitude":4,"Reflex":3,"Will":5,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" 2 slams +7 (1d8+3 plus blood consumption)"}],"RangedAttacks":[]}

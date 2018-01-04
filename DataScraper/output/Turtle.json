@@ -1,0 +1,1 @@
+{"Name":"Turtle","Skills":["Perception","Swim"],"Ac":16,"Hp":3,"Str":3,"Dex":6,"Con":8,"Int":2,"Wis":12,"Cha":3,"Fortitude":1,"Reflex":0,"Will":1,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" bite –2 (1d3–4)"}],"RangedAttacks":[]}

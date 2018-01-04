@@ -1,0 +1,1 @@
+{"Name":"Orc, Blood","Skills":["Intimidate"],"Ac":15,"Hp":8,"Str":18,"Dex":13,"Con":14,"Int":8,"Wis":6,"Cha":6,"Fortitude":4,"Reflex":2,"Will":2,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" greataxe +5 (1d12+6/x3), bite +0 (1d4+2)"}],"RangedAttacks":[{"Ranged":true,"Name":null,"AttackBonus":0,"OriginalText":" javelin +2 (1d6+4)"}]}

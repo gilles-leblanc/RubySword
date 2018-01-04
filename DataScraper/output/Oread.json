@@ -1,0 +1,1 @@
+{"Name":"Oread","Skills":["Intimidate","Perception"],"Ac":14,"Hp":12,"Str":15,"Dex":15,"Con":14,"Int":8,"Wis":14,"Cha":8,"Fortitude":4,"Reflex":2,"Will":4,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" longsword +3 (1d8+3/19–20)"}],"RangedAttacks":[{"Ranged":true,"Name":null,"AttackBonus":0,"OriginalText":" composite longbow +4 (1d8+2/×3)"}]}

@@ -1,0 +1,1 @@
+{"Name":"Orog (Greater Orc)","Skills":["Perception"],"Ac":18,"Hp":23,"Str":16,"Dex":10,"Con":14,"Int":10,"Wis":8,"Cha":8,"Fortitude":5,"Reflex":1,"Will":0,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" greataxe +5 (1d12+4)"}],"RangedAttacks":[{"Ranged":true,"Name":null,"AttackBonus":0,"OriginalText":" javelin +2 (1d6+3)"}]}
