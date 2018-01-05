@@ -1,1 +1,0 @@
-{"Name":"Tear of Burning Flame","Skills":["Climb","Stealth"],"Ac":6,"Hp":62,"Str":14,"Dex":1,"Con":24,"Int":4,"Wis":5,"Cha":1,"Fortitude":8,"Reflex":4,"Will":2,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" slam +7 (1d6+3 plus "}],"RangedAttacks":[{"Ranged":true,"Name":null,"AttackBonus":0,"OriginalText":" ranged touch –1 (by spell)"}]}

@@ -1,1 +1,0 @@
-{"Name":"Leshy, Gourd","Skills":["Perception","Stealth"],"Ac":13,"Hp":9,"Str":6,"Dex":15,"Con":14,"Int":6,"Wis":11,"Cha":15,"Fortitude":4,"Reflex":2,"Will":0,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" slam -1 (1d3-2 plus ensnare)"}],"RangedAttacks":[{"Ranged":true,"Name":null,"AttackBonus":0,"OriginalText":" seed +3 (1 plus ensnare)"}]}

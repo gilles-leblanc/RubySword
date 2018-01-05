@@ -1,1 +1,0 @@
-{"Name":"Vegepygmy Worker","Skills":["Perception","Stealth"],"Ac":16,"Hp":16,"Str":11,"Dex":14,"Con":11,"Int":8,"Wis":11,"Cha":10,"Fortitude":3,"Reflex":3,"Will":1,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" 2 claws +3 (1d3) or spear +3 (1d6/x3)"}],"RangedAttacks":[{"Ranged":true,"Name":null,"AttackBonus":0,"OriginalText":" spear +5 (1d6/x3)"}]}

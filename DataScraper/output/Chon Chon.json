@@ -1,1 +1,0 @@
-{"Name":"Chon Chon","Skills":["Fly","Perception"],"Ac":14,"Hp":9,"Str":6,"Dex":15,"Con":10,"Int":7,"Wis":12,"Cha":13,"Fortitude":0,"Reflex":4,"Will":4,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" bite +1 (1d3–2)"}],"RangedAttacks":[{"Ranged":true,"Name":null,"AttackBonus":0,"OriginalText":" acid spit +5 (1d4 acid)"}]}

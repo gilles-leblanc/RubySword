@@ -1,1 +1,0 @@
-{"Name":"Silid","Skills":["Stealth"],"Ac":15,"Hp":8,"Str":13,"Dex":15,"Con":14,"Int":10,"Wis":9,"Cha":4,"Fortitude":4,"Reflex":2,"Will":1,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" short sword +4 (1d6+1)"}],"RangedAttacks":[{"Ranged":true,"Name":null,"AttackBonus":0,"OriginalText":" shortspear +4 (1d4+1)"}]}

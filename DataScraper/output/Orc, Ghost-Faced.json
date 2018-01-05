@@ -1,1 +1,0 @@
-{"Name":"Orc, Ghost-Faced","Skills":["Stealth"],"Ac":13,"Hp":7,"Str":17,"Dex":10,"Con":12,"Int":7,"Wis":10,"Cha":5,"Fortitude":3,"Reflex":0,"Will":0,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" greataxe +4 (1d12+4/x3)"}],"RangedAttacks":[{"Ranged":true,"Name":null,"AttackBonus":0,"OriginalText":" shortbow +1 (1d6/x3)"}]}

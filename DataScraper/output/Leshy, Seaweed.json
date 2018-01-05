@@ -1,1 +1,0 @@
-{"Name":"Leshy, Seaweed","Skills":["Perception","Stealth","Survival","Swim"],"Ac":15,"Hp":30,"Str":10,"Dex":13,"Con":14,"Int":9,"Wis":15,"Cha":12,"Fortitude":6,"Reflex":2,"Will":3,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" slam +4 (1d6)"}],"RangedAttacks":[{"Ranged":true,"Name":null,"AttackBonus":0,"OriginalText":" water jet +5 (1 plus "}]}

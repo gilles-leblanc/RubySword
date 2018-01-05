@@ -1,1 +1,0 @@
-{"Name":"Spikestone Guardian","Skills":[],"Ac":23,"Hp":96,"Str":29,"Dex":7,"Con":8211,"Int":8211,"Wis":11,"Cha":1,"Fortitude":4,"Reflex":2,"Will":4,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" 2 slams +17 (3d6+9/19-20)"}],"RangedAttacks":[{"Ranged":true,"Name":null,"AttackBonus":0,"OriginalText":" spike volley +6 (2d8+9)"}]}
