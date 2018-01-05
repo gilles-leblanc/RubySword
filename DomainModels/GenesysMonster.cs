@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DomainModels
 {
@@ -42,7 +43,7 @@ namespace DomainModels
             // Empty constructor for deserialization
         }
 
-        public GenesysMonster(D20Monster d20monster)
+        public GenesysMonster(D20Monster d20monster, Dictionary<string, string> skillConversionTable)
         {
             Name = d20monster.Name;
             Agility = ConvertAbility(d20monster.Dex);
@@ -51,7 +52,8 @@ namespace DomainModels
             Intellect = ConvertAbility(d20monster.Int);
             Presence = ConvertAbility(d20monster.Cha);
             Willpower = ConvertAbility(d20monster.Wis);
-        }
+            Skills = ConvertSkills(d20monster.Skills, skillConversionTable);
+        }               
 
         private static int ConvertAbility(int input)
         {
@@ -77,6 +79,18 @@ namespace DomainModels
                 return 6;
 
             throw new InvalidOperationException($"Non valid input {input} for ConvertAbility");
+        }
+
+        private static List<string> ConvertSkills(List<string> skills, Dictionary<string, string> skillConversionTable)
+        {
+            var convertedSkills = new List<string>();
+
+            skills.Where(skill => skillConversionTable.ContainsKey(skill) 
+                               && skillConversionTable[skill] != "0")   // 0, is the missing value when we can't convert a skill
+                  .ToList()
+                  .ForEach(skill => convertedSkills.Add(skillConversionTable[skill]));
+                  
+            return convertedSkills;
         }
 
         public string ToJson() => JsonConvert.SerializeObject(this);

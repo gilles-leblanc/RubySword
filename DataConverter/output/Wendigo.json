@@ -1,1 +1,1 @@
-{"Name":"Wendigo","Brawn":6,"Agility":6,"Intellect":6,"Cunning":5,"Willpower":4,"Presence":5,"Soak":0,"WoundTreshold":0,"MeleeDefense":0,"RangedDefense":0,"Talents":null,"Abilities":null,"Skills":null,"Equipment":null}
+{"Name":"Wendigo","Brawn":6,"Agility":6,"Intellect":6,"Cunning":5,"Willpower":4,"Presence":5,"Soak":0,"WoundTreshold":0,"MeleeDefense":0,"RangedDefense":0,"Talents":null,"Abilities":null,"Skills":["Coordination","Deception","Leadership","Coercion","Knowledge","Perception","Vigilance","Arcana","Stealth","Survival"],"Equipment":null}

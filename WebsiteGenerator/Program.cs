@@ -103,7 +103,8 @@ namespace WebsiteGenerator
                                                  .Replace("{intellect}", m.Intellect.ToString())
                                                  .Replace("{cunning}", m.Cunning.ToString())
                                                  .Replace("{willpower}", m.Willpower.ToString())
-                                                 .Replace("{presence}", m.Presence.ToString()));
+                                                 .Replace("{presence}", m.Presence.ToString())
+                                                 .Replace("{skills}", string.Join(", ", m.Skills.OrderBy(x => x))));
         }
     }
 }

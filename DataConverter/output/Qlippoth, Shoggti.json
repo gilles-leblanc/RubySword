@@ -1,1 +1,1 @@
-{"Name":"Qlippoth, Shoggti","Brawn":5,"Agility":4,"Intellect":3,"Cunning":3,"Willpower":4,"Presence":3,"Soak":0,"WoundTreshold":0,"MeleeDefense":0,"RangedDefense":0,"Talents":null,"Abilities":null,"Skills":null,"Equipment":null}
+{"Name":"Qlippoth, Shoggti","Brawn":5,"Agility":4,"Intellect":3,"Cunning":3,"Willpower":4,"Presence":3,"Soak":0,"WoundTreshold":0,"MeleeDefense":0,"RangedDefense":0,"Talents":null,"Abilities":null,"Skills":["Coordination","Coercion","Knowledge","Perception","Vigilance","Stealth","Arcana"],"Equipment":null}

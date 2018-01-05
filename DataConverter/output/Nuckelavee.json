@@ -1,1 +1,1 @@
-{"Name":"Nuckelavee","Brawn":5,"Agility":5,"Intellect":3,"Cunning":4,"Willpower":4,"Presence":5,"Soak":0,"WoundTreshold":0,"MeleeDefense":0,"RangedDefense":0,"Talents":null,"Abilities":null,"Skills":null,"Equipment":null}
+{"Name":"Nuckelavee","Brawn":5,"Agility":5,"Intellect":3,"Cunning":4,"Willpower":4,"Presence":5,"Soak":0,"WoundTreshold":0,"MeleeDefense":0,"RangedDefense":0,"Talents":null,"Abilities":null,"Skills":["Coordination","Coordination","Coercion","Knowledge","Perception","Stealth","Athletics"],"Equipment":null}

@@ -1,6 +1,7 @@
 ﻿using DomainModels;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.IO;
 
 namespace DataConverter
@@ -20,6 +21,10 @@ namespace DataConverter
             Directory.CreateDirectory(outputDirectory.Value);
 
             IConfigurationSection inputDirectory = Configuration.GetSection("inputDirectory");
+            IConfigurationSection skillConversion = Configuration.GetSection("skillConversion");
+
+            var skillConversionTable = new Dictionary<string, string>();
+            skillConversion.Bind(skillConversionTable);
 
             // open each file
             foreach (string filePath in Directory.EnumerateFiles(inputDirectory.Value, "*.json"))
@@ -28,7 +33,7 @@ namespace DataConverter
                 D20Monster d20monster = JsonConvert.DeserializeObject<D20Monster>(value);
 
                 // convert and output
-                GenesysMonster genMonster = new GenesysMonster(d20monster);
+                GenesysMonster genMonster = new GenesysMonster(d20monster, skillConversionTable);
                 WriteToFile(genMonster);
             }
         }

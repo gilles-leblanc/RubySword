@@ -1,1 +1,1 @@
-{"Name":"Thrasfyr","Brawn":6,"Agility":3,"Intellect":1,"Cunning":4,"Willpower":5,"Presence":4,"Soak":0,"WoundTreshold":0,"MeleeDefense":0,"RangedDefense":0,"Talents":null,"Abilities":null,"Skills":null,"Equipment":null}
+{"Name":"Thrasfyr","Brawn":6,"Agility":3,"Intellect":1,"Cunning":4,"Willpower":5,"Presence":4,"Soak":0,"WoundTreshold":0,"MeleeDefense":0,"RangedDefense":0,"Talents":null,"Abilities":null,"Skills":["Athletics","Perception"],"Equipment":null}

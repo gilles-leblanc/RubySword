@@ -1,1 +1,1 @@
-{"Name":"Demon, Brimorak","Brawn":4,"Agility":4,"Intellect":3,"Cunning":3,"Willpower":3,"Presence":3,"Soak":0,"WoundTreshold":0,"MeleeDefense":0,"RangedDefense":0,"Talents":null,"Abilities":null,"Skills":null,"Equipment":null}
+{"Name":"Demon, Brimorak","Brawn":4,"Agility":4,"Intellect":3,"Cunning":3,"Willpower":3,"Presence":3,"Soak":0,"WoundTreshold":0,"MeleeDefense":0,"RangedDefense":0,"Talents":null,"Abilities":null,"Skills":["Coordination","Deception","Knowledge","Perception","Vigilance","Stealth","Survival"],"Equipment":null}
