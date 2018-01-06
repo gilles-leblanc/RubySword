@@ -1,0 +1,1 @@
+{"Name":"Golem, Alchemical (Embalming)","Skills":[],"Ac":23,"Hp":96,"Str":27,"Dex":18,"Con":0,"Int":0,"Wis":11,"Cha":1,"Fortitude":4,"Reflex":8,"Will":4,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" 2 slams +19 (2d8+8 plus alchemy)"}],"RangedAttacks":[{"Ranged":true,"Name":null,"AttackBonus":0,"OriginalText":" bomb +15 (8d6 energy damage)"}]}

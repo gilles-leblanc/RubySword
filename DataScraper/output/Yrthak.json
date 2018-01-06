@@ -1,0 +1,1 @@
+{"Name":"Yrthak","Skills":["Fly","Perception"],"Ac":23,"Hp":114,"Str":24,"Dex":14,"Con":18,"Int":7,"Wis":15,"Cha":11,"Fortitude":12,"Reflex":12,"Will":8,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" bite +17 (2d6+7), 2 claws +17 (1d8+7)"}],"RangedAttacks":[{"Ranged":true,"Name":null,"AttackBonus":0,"OriginalText":" sonic lance +12 ranged "}]}

@@ -1,0 +1,1 @@
+{"Name":"Spore Rat","Skills":["Climb","Perception"],"Ac":16,"Hp":13,"Str":6,"Dex":16,"Con":11,"Int":2,"Wis":12,"Cha":4,"Fortitude":3,"Reflex":4,"Will":2,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" bite +6 (1d4-2 plus spores)"}],"RangedAttacks":[]}

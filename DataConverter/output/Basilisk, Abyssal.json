@@ -1,1 +1,1 @@
-{"Name":"Basilisk, Abyssal","Brawn":5,"Agility":2,"Intellect":1,"Cunning":2,"Willpower":2,"Presence":3,"Soak":0,"WoundTreshold":0,"MeleeDefense":0,"RangedDefense":0,"Talents":null,"Abilities":null,"Skills":["Athletics","Perception","Vigilance","Stealth"],"Equipment":null}
+{"Name":"Basilisk, Abyssal","Brawn":5,"Agility":2,"Intellect":1,"Cunning":2,"Willpower":2,"Presence":3,"Soak":23,"WoundThreshold":23,"StrainThreshold":29,"MeleeDefense":1,"RangedDefense":1,"Talents":null,"Abilities":null,"Skills":["Athletics","Perception","Vigilance","Stealth"],"Equipment":null}

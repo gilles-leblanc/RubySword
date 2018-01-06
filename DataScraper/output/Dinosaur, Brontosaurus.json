@@ -1,0 +1,1 @@
+{"Name":"Dinosaur, Brontosaurus","Skills":["Perception"],"Ac":18,"Hp":481,"Str":35,"Dex":11,"Con":25,"Int":1,"Wis":10,"Cha":9,"Fortitude":24,"Reflex":15,"Will":8,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" stomp +23 (2d6+7), tail +18 (2d8+3)"}],"RangedAttacks":[]}

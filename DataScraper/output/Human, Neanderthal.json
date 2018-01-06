@@ -1,0 +1,1 @@
+{"Name":"Human, Neanderthal","Skills":["Perception"],"Ac":17,"Hp":23,"Str":17,"Dex":14,"Con":17,"Int":8,"Wis":12,"Cha":10,"Fortitude":5,"Reflex":2,"Will":1,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" greatclub +5 (1d10+4)"}],"RangedAttacks":[{"Ranged":true,"Name":null,"AttackBonus":0,"OriginalText":" spear +4 (1d8+3)"}]}

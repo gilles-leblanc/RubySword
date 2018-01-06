@@ -1,1 +1,1 @@
-{"Name":"Havero","Brawn":6,"Agility":3,"Intellect":1,"Cunning":5,"Willpower":6,"Presence":6,"Soak":0,"WoundTreshold":0,"MeleeDefense":0,"RangedDefense":0,"Talents":null,"Abilities":null,"Skills":["Perception"],"Equipment":null}
+{"Name":"Havero","Brawn":6,"Agility":3,"Intellect":1,"Cunning":5,"Willpower":6,"Presence":6,"Soak":26,"WoundThreshold":55,"StrainThreshold":55,"MeleeDefense":2,"RangedDefense":1,"Talents":null,"Abilities":null,"Skills":["Perception"],"Equipment":null}

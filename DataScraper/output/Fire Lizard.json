@@ -1,0 +1,1 @@
+{"Name":"Fire Lizard","Skills":["Stealth"],"Ac":17,"Hp":105,"Str":26,"Dex":10,"Con":21,"Int":2,"Wis":11,"Cha":10,"Fortitude":12,"Reflex":7,"Will":3,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" bite +17 (2d6+8), 2 claws +16 (1d8+8)"}],"RangedAttacks":[]}

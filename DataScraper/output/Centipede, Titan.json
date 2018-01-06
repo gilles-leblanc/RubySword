@@ -1,0 +1,1 @@
+{"Name":"Centipede, Titan","Skills":["Climb","Perception"],"Ac":21,"Hp":135,"Str":43,"Dex":11,"Con":29,"Int":8211,"Wis":10,"Cha":2,"Fortitude":16,"Reflex":3,"Will":3,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" bite +15 (4d6+24 plus poison)"}],"RangedAttacks":[]}

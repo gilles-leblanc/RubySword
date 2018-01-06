@@ -1,0 +1,1 @@
+{"Name":"Canopy Creeper","Skills":["Climb","Perception","Stealth"],"Ac":23,"Hp":150,"Str":26,"Dex":16,"Con":26,"Int":2,"Wis":10,"Cha":10,"Fortitude":12,"Reflex":9,"Will":8,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" bite +16 (2d6+12)"}],"RangedAttacks":[{"Ranged":true,"Name":null,"AttackBonus":0,"OriginalText":" 4 vine tendrils +10 ("}]}

@@ -1,0 +1,1 @@
+{"Name":"Leprechaun","Skills":["Acrobatics","Bluff","Craft","Escape Artist","Knowledge","Perception","Perform","Sleight of Hand","Stealth"],"Ac":14,"Hp":7,"Str":7,"Dex":16,"Con":11,"Int":16,"Wis":15,"Cha":16,"Fortitude":0,"Reflex":5,"Will":4,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" dagger +5 (1d3-2)"}],"RangedAttacks":[]}

@@ -1,1 +1,1 @@
-{"Name":"Hoar Fox","Brawn":3,"Agility":4,"Intellect":1,"Cunning":1,"Willpower":3,"Presence":1,"Soak":0,"WoundTreshold":0,"MeleeDefense":0,"RangedDefense":0,"Talents":null,"Abilities":null,"Skills":["Perception","Stealth","Survival"],"Equipment":null}
+{"Name":"Hoar Fox","Brawn":3,"Agility":4,"Intellect":1,"Cunning":1,"Willpower":3,"Presence":1,"Soak":8,"WoundThreshold":5,"StrainThreshold":10,"MeleeDefense":0,"RangedDefense":0,"Talents":null,"Abilities":null,"Skills":["Perception","Stealth","Survival"],"Equipment":null}

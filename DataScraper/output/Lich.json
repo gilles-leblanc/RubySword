@@ -1,0 +1,1 @@
+{"Name":"Lich","Skills":["Craft","Intimidate","Knowledge","Linguistics","Perception","Sense Motive","Spellcraft","Stealth"],"Ac":23,"Hp":111,"Str":10,"Dex":14,"Con":0,"Int":22,"Wis":14,"Cha":16,"Fortitude":6,"Reflex":7,"Will":11,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" touch +5 (1d8+5 plus paralyzing touch)"}],"RangedAttacks":[]}

@@ -1,1 +1,1 @@
-{"Name":"Mold, Mindslaver","Brawn":2,"Agility":4,"Intellect":3,"Cunning":3,"Willpower":3,"Presence":3,"Soak":0,"WoundTreshold":0,"MeleeDefense":0,"RangedDefense":0,"Talents":null,"Abilities":null,"Skills":["Athletics","Coordination","Perception","Stealth"],"Equipment":null}
+{"Name":"Mold, Mindslaver","Brawn":2,"Agility":4,"Intellect":3,"Cunning":3,"Willpower":3,"Presence":3,"Soak":9,"WoundThreshold":5,"StrainThreshold":12,"MeleeDefense":0,"RangedDefense":0,"Talents":null,"Abilities":null,"Skills":["Athletics","Coordination","Perception","Stealth"],"Equipment":null}

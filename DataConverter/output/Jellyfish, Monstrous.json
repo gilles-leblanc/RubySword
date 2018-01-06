@@ -1,1 +1,1 @@
-{"Name":"Jellyfish, Monstrous","Brawn":2,"Agility":3,"Intellect":6,"Cunning":6,"Willpower":2,"Presence":1,"Soak":0,"WoundTreshold":0,"MeleeDefense":0,"RangedDefense":0,"Talents":null,"Abilities":null,"Skills":["Stealth","Athletics"],"Equipment":null}
+{"Name":"Jellyfish, Monstrous","Brawn":2,"Agility":3,"Intellect":6,"Cunning":6,"Willpower":2,"Presence":1,"Soak":5,"WoundThreshold":3,"StrainThreshold":7,"MeleeDefense":0,"RangedDefense":0,"Talents":null,"Abilities":null,"Skills":["Stealth","Athletics"],"Equipment":null}
