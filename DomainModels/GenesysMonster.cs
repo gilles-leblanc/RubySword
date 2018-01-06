@@ -7,6 +7,9 @@ namespace DomainModels
 {
     public class GenesysMonster
     {
+        private const int baseValue = 3;
+        private const int hardCap = 20;
+
         public string Name { get; set; }
 
         public int Brawn { get; set; }
@@ -23,7 +26,9 @@ namespace DomainModels
 
         public int Soak { get; set; }
 
-        public int WoundTreshold { get; set; }
+        public int WoundThreshold { get; set; }
+
+        public int StrainThreshold { get; set; }
 
         public int MeleeDefense { get; set; }
 
@@ -45,13 +50,25 @@ namespace DomainModels
 
         public GenesysMonster(D20Monster d20monster, Dictionary<string, string> skillConversionTable)
         {
+            // Info
             Name = d20monster.Name;
+
+            // Characteristics
             Agility = ConvertAbility(d20monster.Dex);
             Brawn = ConvertAbility((d20monster.Str + d20monster.Con) / 2);
             Cunning = ConvertAbility((d20monster.Int + d20monster.Wis + d20monster.Cha) / 3);
             Intellect = ConvertAbility(d20monster.Int);
             Presence = ConvertAbility(d20monster.Cha);
             Willpower = ConvertAbility(d20monster.Wis);
+
+            // Derived
+            Soak = Brawn + Math.Min(d20monster.Fortitude, hardCap);
+            WoundThreshold = Brawn + (d20monster.Hp / 10);
+            StrainThreshold = baseValue + d20monster.Fortitude + d20monster.Will;
+            MeleeDefense = d20monster.Ac / 20;
+            RangedDefense = (d20monster.Ac / 20 + d20monster.Reflex / 10) / 2;
+
+            // Skills, talents, abilities, etc.
             Skills = ConvertSkills(d20monster.Skills, skillConversionTable);
         }               
 

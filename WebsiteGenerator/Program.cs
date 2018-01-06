@@ -1,7 +1,6 @@
 ﻿using DomainModels;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -103,7 +102,12 @@ namespace WebsiteGenerator
                                                  .Replace("{intellect}", m.Intellect.ToString())
                                                  .Replace("{cunning}", m.Cunning.ToString())
                                                  .Replace("{willpower}", m.Willpower.ToString())
-                                                 .Replace("{presence}", m.Presence.ToString())
+                                                 .Replace("{presence}", m.Presence.ToString())                                                 
+                                                 .Replace("{soak}", m.Soak.ToString())
+                                                 .Replace("{wt}", m.WoundThreshold.ToString())
+                                                 .Replace("{st}", m.StrainThreshold.ToString())
+                                                 .Replace("{md}", m.MeleeDefense.ToString())
+                                                 .Replace("{rd}", m.RangedDefense.ToString())
                                                  .Replace("{skills}", string.Join(", ", m.Skills.OrderBy(x => x))));
         }
     }
