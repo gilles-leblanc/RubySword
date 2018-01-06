@@ -20,52 +20,123 @@
 
     <section class="section">
         <div class="container">
-            <div class="field">
-                <label class="label">Brawn</label>
-                <div class="control">
-                    {brawn}
+
+            <div class="tile is-ancestor">
+                <!--brawn-->
+                <div class="tile is-parent is-2">
+                    <article class="tile is-child notification is-info">
+                        <p class="subtitle has-text-centered">Brawn</p>
+                        <p class="subtitle has-text-centered">{brawn}</p>
+                    </article>
+                </div>
+
+                <!--agility-->
+                <div class="tile is-parent is-2">
+                    <article class="tile is-child notification is-info">
+                        <p class="subtitle has-text-centered">Agility</p>
+                        <p class="subtitle has-text-centered">{agility}</p>
+                    </article>
+                </div>
+
+                <!--intellect-->
+                <div class="tile is-parent is-2">
+                    <article class="tile is-child notification is-info">
+                        <p class="subtitle has-text-centered">Intellect</p>
+                        <p class="subtitle has-text-centered">{intellect}</p>
+                    </article>
+                </div>
+
+                <!--cunning-->
+                <div class="tile is-parent is-2">
+                    <article class="tile is-child notification is-info">
+                        <p class="subtitle has-text-centered">Cunning</p>
+                        <p class="subtitle has-text-centered">{cunning}</p>
+                    </article>
+                </div>
+
+                <!--willpower-->
+                <div class="tile is-parent is-2">
+                    <article class="tile is-child notification is-info">
+                        <p class="subtitle has-text-centered">Willpower</p>
+                        <p class="subtitle has-text-centered">{willpower}</p>
+                    </article>
+                </div>
+
+                <!--presence-->
+                <div class="tile is-parent is-2">
+                    <article class="tile is-child notification is-info">
+                        <p class="subtitle has-text-centered">Presence</p>
+                        <p class="subtitle has-text-centered">{presence}</p>
+                    </article>
                 </div>
             </div>
 
-            <div class="field">
-                <label class="label">Agility</label>
-                <div class="control">
-                    {agility}
-                </div>
-            </div>
 
-            <div class="field">
-                <label class="label">Intellect</label>
-                <div class="control">
-                    {intellect}
-                </div>
-            </div>
+            <div class="tile is-ancestor">
+                <!--empty tile-->
+                <div class="tile is-2"></div>
 
-            <div class="field">
-                <label class="label">Cunning</label>
-                <div class="control">
-                    {cunning}
+                <!--soak-->
+                <div class="tile is-parent is-2">
+                    <article class="tile is-child notification is-success">
+                        <p class="subtitle has-text-centered">Soak</p>
+                        <p class="subtitle has-text-centered">{soak}</p>
+                    </article>
                 </div>
-            </div>
 
-            <div class="field">
-                <label class="label">Willpower</label>
-                <div class="control">
-                    {willpower}
+                <!--wound treshold-->
+                <div class="tile is-parent is-2">
+                    <article class="tile is-child notification is-success">
+                        <p class="subtitle has-text-centered">Wound Threshold</p>
+                        <p class="subtitle has-text-centered">{wt}</p>
+                    </article>
                 </div>
-            </div>
 
-            <div class="field">
-                <label class="label">Presence</label>
-                <div class="control">
-                    {presence}
+                <!--strain treshold-->
+                <div class="tile is-parent is-2">
+                    <article class="tile is-child notification is-success">
+                        <p class="subtitle has-text-centered">Strain Threshold</p>
+                        <p class="subtitle has-text-centered">{st}</p>
+                    </article>
                 </div>
+
+                <!--defenses-->
+                <div class="tile is-parent is-2">
+                    <article class="tile is-child notification is-success">
+                        <p class="subtitle has-text-centered">Melee/Ranged Defenses</p>
+                        <p class="subtitle has-text-centered">{md} | {rd}</p>
+                    </article>
+                </div>
+
+                <!--empty tile-->
+                <div class="tile is-2"></div>
             </div>
 
             <div class="field">
                 <label class="label">Skills</label>
                 <div class="control">
                     {skills}
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Talents</label>
+                <div class="control">
+
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Abilities</label>
+                <div class="control">
+
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Equipment</label>
+                <div class="control">
+
                 </div>
             </div>
         </div>
