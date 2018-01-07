@@ -10,16 +10,23 @@ namespace DomainModels
     public class D20Monster
     {
         private const string rxNonDigits = @"[^\d]+";
+        private const string rxHitDice = @"\d{1,2} {0,1}(d|D)";
 
         public string Name { get; set; }
 
         public List<string> Skills { get; set; }
+
+        private const string baseatk = "Base Atk";
+        public int BaseAttackBonus { get; set; }
 
         private const string ac = "AC";
         public int Ac { get; set; }
 
         private const string hp = "hp";
         public int Hp { get; set; }
+
+        //private const string hd = "d";
+        public int HitDice { get; set; }
 
         private const string str = "Str";
         public int Str { get; set; }
@@ -83,6 +90,7 @@ namespace DomainModels
             Int = GetStat(statsBlock, @int);
             Wis = GetStat(statsBlock, wis);
             Cha = GetStat(statsBlock, cha);
+            BaseAttackBonus = GetStat(statsBlock, baseatk);
 
             Skills = GetSkills(document);
 
@@ -93,6 +101,7 @@ namespace DomainModels
 
             Ac = GetStat(defensesBlock, ac);
             Hp = GetStat(defensesBlock, hp);
+            HitDice = GetHitDice(defensesBlock);
             Fortitude = GetStat(defensesBlock, fort);
             Reflex = GetStat(defensesBlock, @ref);
             Will = GetStat(defensesBlock, will);
@@ -163,6 +172,25 @@ namespace DomainModels
         }        
 
         private static bool IsStatDelimeter(char c) => c == ',' || c == '(' || c == ';';
+
+        private static int GetHitDice(HtmlNode statsBlock)
+        {
+            var HpHdLine = statsBlock.Descendants("b")
+                                     .FirstOrDefault(d => d.InnerHtml.Contains(hp))
+                                     ?.NextSibling
+                                     ?.InnerText;
+
+            var hitDiceMatch = Regex.Match(HpHdLine, rxHitDice);
+
+            if (hitDiceMatch == null || !hitDiceMatch.Success)
+                throw new InvalidOperationException($"Could not find any hit dice value in statsblock: {statsBlock}.");
+
+            // remove the letter D in the sample and convert to int
+             if (!int.TryParse(hitDiceMatch.Value.Replace("d", "").Replace("D", ""), out int result))
+                throw new InvalidOperationException($"In {nameof(GetHitDice)} could not parse {hitDiceMatch.Value} into an integer value.");
+
+            return result;
+        }
 
         private static List<string> GetSkills(HtmlDocument document)
         {
