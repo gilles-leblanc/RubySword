@@ -25,7 +25,7 @@ namespace WebsiteGenerator
             IConfigurationSection inputDirectory = Configuration.GetSection("inputDirectory");
 
             Dictionary<char, List<GenesysMonster>> monsters = ReadMonsters(inputDirectory);
-            
+
             string alphaIndexLink = Configuration.GetSection("alphaIndexLink").Value;
             string alphaLinkTemplate = File.ReadAllText(Configuration.GetSection("alphaIndexPage").Value);
 
@@ -82,7 +82,8 @@ namespace WebsiteGenerator
 
             monsters[letter].ForEach(m =>
             {
-                GenerateMonstersForLetter(letter, outputDirectory, monsterPageLink, monsterPageTemplate, regexAlphaNumeric, m, monsterLinks);
+                GenerateMonstersForLetter(letter, outputDirectory, monsterPageLink, monsterPageTemplate, 
+                                          regexAlphaNumeric, m, monsterLinks);
             });
 
             File.WriteAllText($"{outputDirectory.Value}/index-{letter}.html",
@@ -90,7 +91,9 @@ namespace WebsiteGenerator
                                                .Replace("{monsterPageLinks}", string.Join("<br />\n", monsterLinks)));
         }
 
-        private static void GenerateMonstersForLetter(char letter, IConfigurationSection outputDirectory, string monsterPageLink, string monsterPageTemplate, Regex regexAlphaNumeric, GenesysMonster m, List<string> monsterLinks)
+        private static void GenerateMonstersForLetter(char letter, IConfigurationSection outputDirectory, 
+                                                      string monsterPageLink, string monsterPageTemplate, Regex regexAlphaNumeric, 
+                                                      GenesysMonster m, List<string> monsterLinks)
         {
             string name = regexAlphaNumeric.Replace(m.Name, "");
             monsterLinks.Add(string.Format(monsterPageLink, letter, name, m.Name));
@@ -108,7 +111,8 @@ namespace WebsiteGenerator
                                                  .Replace("{st}", m.StrainThreshold.ToString())
                                                  .Replace("{md}", m.MeleeDefense.ToString())
                                                  .Replace("{rd}", m.RangedDefense.ToString())
-                                                 .Replace("{skills}", string.Join(", ", m.Skills.OrderBy(x => x))));
+                                                 .Replace("{skills}", string.Join(", ", m.Skills.OrderBy(x => x)))
+                                                 .Replace("{letter}", letter.ToString()));
         }
     }
 }

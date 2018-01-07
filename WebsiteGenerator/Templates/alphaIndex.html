@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{letter}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
 </head>
 <body>
@@ -12,11 +13,21 @@
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
+                    <span class="icon">
+                        <i class="fa fa-list"></i>
+                    </span>
                     {letter}
                 </h1>
             </div>
         </div>
     </section>
+
+    <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="is-active"><a href="#" aria-current="page">{letter}</a></li>
+        </ul>
+    </nav>
 
     <section class="section">
         <div class="container">
