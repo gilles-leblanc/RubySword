@@ -25,7 +25,6 @@ namespace DomainModels
         private const string hp = "hp";
         public int Hp { get; set; }
 
-        //private const string hd = "d";
         public int HitDice { get; set; }
 
         private const string str = "Str";
@@ -73,11 +72,9 @@ namespace DomainModels
                            .Descendants("h1")
                            .First()
                            .InnerText
-                           .Replace("(3pp)", "")
-                           .Replace("(3pp-FGG)", "")
-                           .Replace("(3PP-FGG)", "")
-                           .Replace("(3pp-FF)", "")
                            .Trim();
+
+            Name = string.Concat(Name.TakeWhile(c => c != '(')).TrimEnd();
 
             var statsBlock = GetBlock(document, StatsBlockSpecification());
 
