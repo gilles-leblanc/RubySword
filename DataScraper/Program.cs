@@ -31,18 +31,18 @@ namespace DataScraper
 
             var monstersHtml = 
                 monsterUrls.Where(x => !string.IsNullOrWhiteSpace(x.Value))
-                           .Select(hub => DownloadPage(hub.Value))
-                           .SelectMany(html => GetAllLinks(html))
-                           .Where(link => IsMonsterPageLink(link))
-                           .Select(mob => DownloadPage(mob))
-                           //.Select(mob => DownloadPage("http://www.d20pfsrd.com/bestiary/monster-listings/vermin/leech/giant-leech/"))
+                           //.Select(hub => DownloadPage(hub.Value))
+                           //.SelectMany(html => GetAllLinks(html))
+                           //.Where(link => IsMonsterPageLink(link))
+                           //.Select(mob => DownloadPage(mob))
+                           .Select(mob => DownloadPage("http://www.d20pfsrd.com/bestiary/monster-listings/aberrations/brethedan/"))
                            .Where(html => IsValidMonster(html));
 
             foreach (var monsterHtml in monstersHtml)
             {
                 try
                 {
-                    WriteToFile(new PathfinderMonster(monsterHtml));
+                    WriteToFile(new D20Monster(monsterHtml));
                 }
                 catch (Exception exception)
                 {
@@ -79,6 +79,6 @@ namespace DataScraper
 
         private static bool IsValidMonster(string html) => html.Contains("XP") && html.Contains("Init");
 
-        private static void WriteToFile(PathfinderMonster monster) => File.WriteAllText($"./output/{monster.Name}.json", monster.ToJson());
+        private static void WriteToFile(D20Monster monster) => File.WriteAllText($"./output/{monster.Name}.json", monster.ToJson());
     }
 }

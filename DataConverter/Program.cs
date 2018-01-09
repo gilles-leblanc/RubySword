@@ -30,7 +30,7 @@ namespace DataConverter
             foreach (string filePath in Directory.EnumerateFiles(inputDirectory.Value, "*.json"))
             {
                 string value = File.ReadAllText(filePath);
-                PathfinderMonster d20monster = JsonConvert.DeserializeObject<PathfinderMonster>(value);
+                D20Monster d20monster = JsonConvert.DeserializeObject<D20Monster>(value);
 
                 // convert and output
                 GenesysMonster genMonster = new GenesysMonster(d20monster, skillConversionTable);

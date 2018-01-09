@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace DomainModels
 {
-    public class PathfinderMonster
+    public class D20Monster
     {
         private const string rxNonDigits = @"[^\d]+";
         private const string rxHitDice = @"\d{1,2} {0,1}(d|D)";
@@ -70,12 +70,12 @@ namespace DomainModels
             }
         }
         
-        public PathfinderMonster()
+        public D20Monster()
         {
             // Empty constructor for deserialization
         }
 
-        public PathfinderMonster(string html)
+        public D20Monster(string html)
         {
             var document = new HtmlDocument();
             document.LoadHtml(html);

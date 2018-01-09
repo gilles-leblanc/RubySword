@@ -48,7 +48,7 @@ namespace DomainModels
             // Empty constructor for deserialization
         }
 
-        public GenesysMonster(PathfinderMonster d20monster, Dictionary<string, string> skillConversionTable)
+        public GenesysMonster(D20Monster d20monster, Dictionary<string, string> skillConversionTable)
         {
             // Info
             Name = d20monster.Name;
