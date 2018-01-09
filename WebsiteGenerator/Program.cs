@@ -112,6 +112,7 @@ namespace WebsiteGenerator
                                                  .Replace("{md}", m.MeleeDefense.ToString())
                                                  .Replace("{rd}", m.RangedDefense.ToString())
                                                  .Replace("{skills}", string.Join(", ", m.Skills.OrderBy(x => x)))
+                                                 .Replace("{equipment}", string.Join(", ", m.Equipment.OrderBy(x => x)))
                                                  .Replace("{letter}", letter.ToString()));
         }
     }

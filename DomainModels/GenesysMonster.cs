@@ -48,7 +48,7 @@ namespace DomainModels
             // Empty constructor for deserialization
         }
 
-        public GenesysMonster(D20Monster d20monster, Dictionary<string, string> skillConversionTable)
+        public GenesysMonster(PathfinderMonster d20monster, Dictionary<string, string> skillConversionTable)
         {
             // Info
             Name = d20monster.Name;
@@ -70,6 +70,7 @@ namespace DomainModels
 
             // Skills, talents, abilities, etc.
             Skills = ConvertSkills(d20monster.Skills, skillConversionTable);
+            Equipment = d20monster.AllAttacks.Select(atk => atk.Name).ToList();
         }               
 
         private static int ConvertAbility(int input)

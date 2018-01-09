@@ -1,19 +1,21 @@
 ﻿using HtmlAgilityPack;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace DomainModels
 {
     public class Attack
     {
+        private static readonly string rxAttackDelimeter = @"(,)|((or|and) )/i";
+        private static readonly string rxNonAlpha = @"[^a-zA-Z]";
+
         private const string melee = "Melee";
         private const string ranged = "Ranged";
 
         public bool Ranged { get; set; }
 
         public string Name { get; set; }
-
-        public int AttackBonus { get; set; }
 
         public string OriginalText { get; set; }
 
@@ -38,13 +40,19 @@ namespace DomainModels
                                          .Where(b => !string.IsNullOrWhiteSpace(b))
                                          .ToList();
 
-            foreach (var candidate in possibleValues)
+            foreach (var possible in possibleValues)
             {
-                attacks.Add(new Attack
-                {
-                    OriginalText = candidate,
-                    Ranged = ranged,
-                });
+                string[] substrings = Regex.Split(possible, rxAttackDelimeter);
+
+                substrings.Select(atk => string.Concat(atk.TakeWhile(c => c != '(')))
+                          .Select(atk => Regex.Replace(atk, rxNonAlpha, ""))
+                          .ToList()
+                          .ForEach(atk => attacks.Add(new Attack
+                          {
+                              OriginalText = possible,
+                              Ranged = ranged,
+                              Name = atk,
+                          }));
             }
 
             return attacks;

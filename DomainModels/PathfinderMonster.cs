@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace DomainModels
 {
-    public class D20Monster
+    public class PathfinderMonster
     {
         private const string rxNonDigits = @"[^\d]+";
         private const string rxHitDice = @"\d{1,2} {0,1}(d|D)";
@@ -16,7 +16,7 @@ namespace DomainModels
 
         public List<string> Skills { get; set; }
 
-        private const string baseatk = "Base Atk";
+        private const string baseatk = "Atk";
         public int BaseAttackBonus { get; set; }
 
         private const string ac = "AC";
@@ -58,12 +58,24 @@ namespace DomainModels
 
         public List<Attack> RangedAttacks { get; set; }
 
-        public D20Monster()
+        public List<Attack> AllAttacks
+        {
+            get
+            {
+                var attacks = new List<Attack>();
+                attacks.AddRange(MeleeAttacks);
+                attacks.AddRange(RangedAttacks);
+
+                return attacks;
+            }
+        }
+        
+        public PathfinderMonster()
         {
             // Empty constructor for deserialization
         }
 
-        public D20Monster(string html)
+        public PathfinderMonster(string html)
         {
             var document = new HtmlDocument();
             document.LoadHtml(html);
@@ -172,12 +184,22 @@ namespace DomainModels
 
         private static int GetHitDice(HtmlNode statsBlock)
         {
-            var HpHdLine = statsBlock.Descendants("b")
+            var hpHdLine = statsBlock.Descendants("b")
                                      .FirstOrDefault(d => d.InnerHtml.Contains(hp))
                                      ?.NextSibling
                                      ?.InnerText;
 
-            var hitDiceMatch = Regex.Match(HpHdLine, rxHitDice);
+            if (!hpHdLine.ToLower().Contains("d"))
+            {
+                string innerText = statsBlock.InnerText;
+                string delimeter = "hp ";
+
+                hpHdLine = string.Concat(innerText.Substring(innerText.IndexOf(delimeter))
+                                                  .TakeWhile(c => c != ')'));
+                                  
+            }
+
+            var hitDiceMatch = Regex.Match(hpHdLine, rxHitDice);
 
             if (hitDiceMatch == null || !hitDiceMatch.Success)
                 throw new InvalidOperationException($"Could not find any hit dice value in statsblock: {statsBlock}.");
