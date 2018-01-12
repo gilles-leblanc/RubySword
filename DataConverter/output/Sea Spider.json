@@ -1,1 +1,1 @@
-{"Name":"Sea Spider","Brawn":4,"Agility":4,"Intellect":1,"Cunning":2,"Willpower":3,"Presence":2,"Soak":19,"WoundThreshold":18,"StrainThreshold":24,"MeleeDefense":1,"RangedDefense":1,"Talents":null,"Abilities":null,"Skills":["Perception","Stealth","Athletics"],"Equipment":null}
+{"Name":"Sea Spider","Brawn":4,"Agility":4,"Intellect":1,"Cunning":2,"Willpower":3,"Presence":2,"Soak":6,"WoundThreshold":34,"StrainThreshold":33,"MeleeDefense":2,"RangedDefense":2,"Talents":null,"Abilities":null,"Skills":["Perception","Stealth","Athletics"],"Equipment":["bite (3)"]}

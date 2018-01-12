@@ -1,1 +1,0 @@
-{"Name":"Autumn Death","Skills":["Fly","Perception","Stealth"],"Ac":21,"Hp":76,"Str":13,"Dex":16,"Con":0,"Int":9,"Wis":14,"Cha":19,"Fortitude":7,"Reflex":6,"Will":8,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" 2 claws +7 (1d4+1)"}],"RangedAttacks":[{"Ranged":true,"Name":null,"AttackBonus":0,"OriginalText":" ray +10 touch (see spell)"}]}

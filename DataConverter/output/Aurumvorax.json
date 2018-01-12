@@ -1,1 +1,1 @@
-{"Name":"Aurumvorax","Brawn":4,"Agility":4,"Intellect":1,"Cunning":2,"Willpower":3,"Presence":2,"Soak":18,"WoundThreshold":15,"StrainThreshold":24,"MeleeDefense":1,"RangedDefense":1,"Talents":null,"Abilities":null,"Skills":["Perception","Stealth"],"Equipment":null}
+{"Name":"Aurumvorax","Brawn":4,"Agility":4,"Intellect":1,"Cunning":2,"Willpower":3,"Presence":2,"Soak":6,"WoundThreshold":28,"StrainThreshold":27,"MeleeDefense":2,"RangedDefense":2,"Talents":null,"Abilities":null,"Skills":["Perception","Stealth"],"Equipment":["bite (2)"]}

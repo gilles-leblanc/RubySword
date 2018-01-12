@@ -1,1 +1,1 @@
-{"Name":"Flytrap, Giant","Brawn":5,"Agility":4,"Intellect":1,"Cunning":1,"Willpower":3,"Presence":1,"Soak":22,"WoundThreshold":19,"StrainThreshold":25,"MeleeDefense":1,"RangedDefense":0,"Talents":null,"Abilities":null,"Skills":["Perception","Stealth"],"Equipment":null}
+{"Name":"Flytrap, Giant","Brawn":5,"Agility":4,"Intellect":1,"Cunning":1,"Willpower":3,"Presence":1,"Soak":7,"WoundThreshold":31,"StrainThreshold":29,"MeleeDefense":1,"RangedDefense":1,"Talents":null,"Abilities":null,"Skills":["Perception","Stealth"],"Equipment":["bites (1)"]}

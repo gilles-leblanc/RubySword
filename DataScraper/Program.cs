@@ -31,11 +31,10 @@ namespace DataScraper
 
             var monstersHtml = 
                 monsterUrls.Where(x => !string.IsNullOrWhiteSpace(x.Value))
-                           //.Select(hub => DownloadPage(hub.Value))
-                           //.SelectMany(html => GetAllLinks(html))
-                           //.Where(link => IsMonsterPageLink(link))
-                           //.Select(mob => DownloadPage(mob))
-                           .Select(mob => DownloadPage("http://www.d20pfsrd.com/bestiary/monster-listings/aberrations/brethedan/"))
+                           .Select(hub => DownloadPage(hub.Value))
+                           .SelectMany(html => GetAllLinks(html))
+                           .Where(link => IsMonsterPageLink(link))
+                           .Select(mob => DownloadPage(mob))
                            .Where(html => IsValidMonster(html));
 
             foreach (var monsterHtml in monstersHtml)

@@ -1,1 +1,0 @@
-{"Name":"Dragonleaf Tree","Skills":["Perception","Stealth"],"Ac":21,"Hp":133,"Str":16,"Dex":10,"Con":19,"Int":3,"Wis":12,"Cha":17,"Fortitude":13,"Reflex":4,"Will":7,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" slam +12 (1d6+4/19–20 plus "}],"RangedAttacks":[{"Ranged":true,"Name":null,"AttackBonus":0,"OriginalText":" leaves +9 (1d8/19–20 plus "}]}

@@ -1,1 +1,1 @@
-{"Name":"Pyrolisk","Brawn":2,"Agility":4,"Intellect":1,"Cunning":2,"Willpower":3,"Presence":2,"Soak":6,"WoundThreshold":4,"StrainThreshold":11,"MeleeDefense":0,"RangedDefense":0,"Talents":null,"Abilities":null,"Skills":["Perception","Stealth"],"Equipment":null}
+{"Name":"Pyrolisk","Brawn":2,"Agility":4,"Intellect":1,"Cunning":2,"Willpower":3,"Presence":2,"Soak":3,"WoundThreshold":10,"StrainThreshold":11,"MeleeDefense":0,"RangedDefense":0,"Talents":null,"Abilities":null,"Skills":["Perception","Stealth"],"Equipment":["bite (0)"]}

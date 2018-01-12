@@ -1,1 +1,0 @@
-{"Name":"Hobgoblin","Skills":["Perception","Stealth"],"Ac":16,"Hp":17,"Str":15,"Dex":15,"Con":16,"Int":10,"Wis":12,"Cha":8,"Fortitude":5,"Reflex":2,"Will":1,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" longsword +4 (1d8+2/19–20) \n     "}],"RangedAttacks":[{"Ranged":true,"Name":null,"AttackBonus":0,"OriginalText":" longbow +3 (1d8/×3) \n     "}]}

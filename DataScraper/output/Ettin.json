@@ -1,1 +1,0 @@
-{"Name":"Ettin","Skills":["Handle Animal","Perception"],"Ac":18,"Hp":65,"Str":23,"Dex":8,"Con":15,"Int":6,"Wis":10,"Cha":11,"Fortitude":9,"Reflex":2,"Will":5,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" 2 flails +12/+7 (2d6+6)"}],"RangedAttacks":[{"Ranged":true,"Name":null,"AttackBonus":0,"OriginalText":" 2 javelins +5 (1d8+6)"}]}

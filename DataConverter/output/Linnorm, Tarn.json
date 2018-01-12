@@ -1,1 +1,1 @@
-{"Name":"Linnorm, Tarn","Brawn":6,"Agility":6,"Intellect":1,"Cunning":4,"Willpower":5,"Presence":6,"Soak":26,"WoundThreshold":44,"StrainThreshold":47,"MeleeDefense":1,"RangedDefense":1,"Talents":null,"Abilities":null,"Skills":["Perception","Stealth","Athletics"],"Equipment":null}
+{"Name":"Linnorm, Tarn","Brawn":6,"Agility":6,"Intellect":1,"Cunning":4,"Willpower":5,"Presence":6,"Soak":8,"WoundThreshold":50,"StrainThreshold":49,"MeleeDefense":2,"RangedDefense":2,"Talents":null,"Abilities":null,"Skills":["Perception","Stealth","Athletics"],"Equipment":["bites (4)"]}

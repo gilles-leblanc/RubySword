@@ -1,1 +1,0 @@
-{"Name":"Otter","Skills":["Escape Artist","Perception","Swim"],"Ac":15,"Hp":4,"Str":3,"Dex":16,"Con":10,"Int":2,"Wis":13,"Cha":5,"Fortitude":2,"Reflex":5,"Will":1,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" bite +5 (1d3-4)"}],"RangedAttacks":[]}

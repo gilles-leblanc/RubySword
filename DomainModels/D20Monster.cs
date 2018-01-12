@@ -99,7 +99,11 @@ namespace DomainModels
             Int = GetStat(statsBlock, @int);
             Wis = GetStat(statsBlock, wis);
             Cha = GetStat(statsBlock, cha);
-            BaseAttackBonus = GetStat(statsBlock, baseatk);
+                        
+            var baseAttackBlock = GetBlock(document, BaseAttackBlockSpecification());
+
+            if (baseAttackBlock != null)
+                BaseAttackBonus = GetStat(baseAttackBlock, baseatk);
 
             Skills = GetSkills(document);
 
@@ -119,10 +123,13 @@ namespace DomainModels
             RangedAttacks = Attack.GetRangedAttacks(document);
         }
 
-        private Func<HtmlNode, bool> StatsBlockSpecification() => p => (p.InnerHtml.Contains("Str"))
-                                                                    && (p.InnerHtml.Contains("Dex"))
-                                                                    && (p.InnerHtml.Contains("Wis"))
-                                                                    && (p.InnerHtml.Contains("Cha"));
+        private Func<HtmlNode, bool> StatsBlockSpecification() => p => p.InnerHtml.Contains("Str")
+                                                                    && p.InnerHtml.Contains("Dex")
+                                                                    && p.InnerHtml.Contains("Wis")
+                                                                    && p.InnerHtml.Contains("Cha");
+
+        private Func<HtmlNode, bool> BaseAttackBlockSpecification() => p => (p.InnerHtml.Contains("Base Atk")) ||
+                                                                            (p.InnerHtml.Contains("CMB") && p.InnerHtml.Contains("CMD"));
 
         private Func<HtmlNode, bool> DefensesBlockSpecification() => p => p.InnerText.Contains("Fort") && p.InnerText.Contains("Ref") 
                                                                        && p.InnerText.Contains("Will");
@@ -142,63 +149,69 @@ namespace DomainModels
 
         private static int GetStat(HtmlNode statsBlock, string stat)
         {
-            string candidate = string.Empty;
-
-            var possibleValue = statsBlock.Descendants("b")
-                                          .FirstOrDefault(d => d.InnerHtml.Contains(stat))
-                                          ?.NextSibling
-                                          ?.InnerText
-                                          .TakeWhile(c => !IsStatDelimeter(c));
-
-            if (possibleValue != null)
-                candidate = string.Concat(possibleValue);
-
-            if (string.IsNullOrWhiteSpace(candidate))
+            try
             {
-                string innerText = statsBlock.InnerText;
-                string delimeter = stat + " ";
+                string candidate = string.Empty;
 
-                candidate = string.Concat(innerText.Substring(innerText.IndexOf(delimeter))
-                                                   .TakeWhile(c => !IsStatDelimeter(c)))
-                                  .Substring(delimeter.Length);
+                var possibleValue = statsBlock.Descendants("b")
+                                              .FirstOrDefault(d => d.InnerHtml.Contains(stat))
+                                              ?.NextSibling
+                                              ?.InnerText
+                                              .TakeWhile(c => !IsStatDelimeter(c));
+
+                if (possibleValue != null)
+                    candidate = string.Concat(possibleValue);
+
+                if (string.IsNullOrWhiteSpace(candidate))
+                {
+                    string innerText = statsBlock.InnerText;
+                    string delimeter = stat + " ";
+
+                    candidate = string.Concat(innerText.Substring(innerText.IndexOf(delimeter))
+                                                       .TakeWhile(c => !IsStatDelimeter(c)))
+                                      .Substring(delimeter.Length);
+                }
+
+                string sanitizedCandidate = candidate.Replace('—', '0')
+                                                     .Replace('–', '0')
+                                                     .Replace('-', '0')
+                                                     .Trim();
+
+                // for the case where we have only a + sign, replace with a zero
+                sanitizedCandidate = sanitizedCandidate == "+" ? "0" : sanitizedCandidate;
+
+                // before parsing remove non digit characters from the string to prevent errors
+                sanitizedCandidate = Regex.Replace(sanitizedCandidate, rxNonDigits, "");
+
+                if (!int.TryParse(sanitizedCandidate, out int parsedValue))
+                    throw new InvalidOperationException($"Could not parse '{sanitizedCandidate}' for stat '{stat}' in statsblock: {statsBlock}.");
+
+                return Math.Abs(parsedValue);
             }
-
-            string sanitizedCandidate = candidate.Replace('—', '0')
-                                                 .Replace('–', '0')
-                                                 .Replace('-', '0')
-                                                 .Trim();
-
-            // for the case where we have only a + sign, replace with a zero
-            sanitizedCandidate = sanitizedCandidate == "+" ? "0" : sanitizedCandidate;
-
-            // before parsing remove non digit characters from the string to prevent errors
-            sanitizedCandidate = Regex.Replace(sanitizedCandidate, rxNonDigits, "");
-                        
-            if (!int.TryParse(sanitizedCandidate, out int parsedValue))
-                throw new InvalidOperationException($"Could not parse '{sanitizedCandidate}' for stat '{stat}' in statsblock: {statsBlock}.");
-
-            return Math.Abs(parsedValue);
+            catch
+            {
+                return 0;
+            }
         }        
 
         private static bool IsStatDelimeter(char c) => c == ',' || c == '(' || c == ';';
 
         private static int GetHitDice(HtmlNode statsBlock)
         {
-            var hpHdLine = statsBlock.Descendants("b")
-                                     .FirstOrDefault(d => d.InnerHtml.Contains(hp))
-                                     ?.NextSibling
-                                     ?.InnerText;
+            string hpHdLine = statsBlock.Descendants("b")
+                                        .FirstOrDefault(d => d.InnerHtml.Contains(hp))
+                                        ?.NextSibling
+                                        ?.InnerText;
 
-            if (!hpHdLine.ToLower().Contains("d"))
+            if (!string.IsNullOrWhiteSpace(hpHdLine) && !hpHdLine.ToLower().Contains("d"))
             {
                 string innerText = statsBlock.InnerText;
                 string delimeter = "hp ";
 
                 hpHdLine = string.Concat(innerText.Substring(innerText.IndexOf(delimeter))
                                                   .TakeWhile(c => c != ')'));
-                                  
             }
-
+            
             var hitDiceMatch = Regex.Match(hpHdLine, rxHitDice);
 
             if (hitDiceMatch == null || !hitDiceMatch.Success)

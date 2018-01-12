@@ -1,1 +1,1 @@
-{"Name":"Stirge Swarm","Brawn":1,"Agility":4,"Intellect":1,"Cunning":1,"Willpower":3,"Presence":1,"Soak":9,"WoundThreshold":8,"StrainThreshold":16,"MeleeDefense":0,"RangedDefense":0,"Talents":null,"Abilities":null,"Skills":["Perception","Stealth"],"Equipment":null}
+{"Name":"Stirge Swarm","Brawn":1,"Agility":4,"Intellect":1,"Cunning":1,"Willpower":3,"Presence":1,"Soak":2,"WoundThreshold":25,"StrainThreshold":27,"MeleeDefense":0,"RangedDefense":0,"Talents":null,"Abilities":null,"Skills":["Perception","Stealth"],"Equipment":["swarm (1)"]}

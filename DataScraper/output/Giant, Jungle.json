@@ -1,1 +1,0 @@
-{"Name":"Giant, Jungle","Skills":["Climb","Craft","Perception","Stealth","Survival"],"Ac":24,"Hp":127,"Str":26,"Dex":19,"Con":19,"Int":10,"Wis":14,"Cha":11,"Fortitude":9,"Reflex":13,"Will":7,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" 2 slams +17 (2d6+8)"}],"RangedAttacks":[{"Ranged":true,"Name":null,"AttackBonus":0,"OriginalText":" mwk "}]}

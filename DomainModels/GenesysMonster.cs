@@ -51,7 +51,10 @@ namespace DomainModels
         public GenesysMonster(D20Monster d20monster, Dictionary<string, string> skillConversionTable)
         {
             // Info
-            Name = d20monster.Name;
+            Name = d20monster.Name
+                             .Replace("Clockwork", "Mechanical")
+                             .Replace("&#8217;", "'")
+                             .Replace("Vegepygmy", "Vegetalpygmy");
 
             // Characteristics
             Agility = ConvertAbility(d20monster.Dex);
@@ -62,15 +65,24 @@ namespace DomainModels
             Willpower = ConvertAbility(d20monster.Wis);
 
             // Derived
-            Soak = Brawn + Math.Min(d20monster.Fortitude, hardCap);
-            WoundThreshold = Brawn + (d20monster.Hp / 10);
-            StrainThreshold = baseValue + d20monster.Fortitude + d20monster.Will;
-            MeleeDefense = d20monster.Ac / 20;
-            RangedDefense = (d20monster.Ac / 20 + d20monster.Reflex / 10) / 2;
+            Soak = Brawn + ConvertSoak(d20monster.Ac);
+            WoundThreshold = 2 * Math.Max(2, d20monster.HitDice) + Brawn;
+            StrainThreshold = 2 * Math.Max(2, d20monster.HitDice) + Willpower;
+            MeleeDefense = ConvertDefenses(d20monster.Ac);
+            RangedDefense = ConvertDefenses(d20monster.Ac);
 
             // Skills, talents, abilities, etc.
             Skills = ConvertSkills(d20monster.Skills, skillConversionTable);
-            Equipment = d20monster.AllAttacks.Select(atk => atk.Name).ToList();
+
+            var attacks = d20monster.MeleeAttacks.Select(atk => d20monster.BaseAttackBonus > 0 ? 
+                                                                $"{atk.Name} ({Math.Min(Brawn, d20monster.BaseAttackBonus / 5)})" 
+                                                                : atk.Name).ToList();
+
+            attacks.AddRange(d20monster.RangedAttacks.Select(atk => d20monster.BaseAttackBonus > 0 ?
+                                                                    $"{atk.Name} ({Math.Min(Agility, d20monster.BaseAttackBonus / 5)}"
+                                                                    : atk.Name).ToList());
+
+            Equipment = attacks ?? new List<string>();
         }               
 
         private static int ConvertAbility(int input)
@@ -109,6 +121,34 @@ namespace DomainModels
                   .ForEach(skill => convertedSkills.Add(skillConversionTable[skill]));
                   
             return convertedSkills;
+        }
+
+        private static int ConvertSoak(int ac)
+        {
+            if (ac <= 13)
+                return 0;
+
+            if (ac >= 14 && ac <= 16)
+                return 1;
+
+            if (ac >= 17)
+                return 2;
+
+            throw new InvalidOperationException($"Invalid ac value {ac}.");
+        }
+
+        private static int ConvertDefenses(int ac)
+        {
+            if (ac <= 19)
+                return 0;
+
+            if (ac >= 20 && ac <= 22)
+                return 1;
+
+            if (ac >= 23)
+                return 2;
+
+            throw new InvalidOperationException($"Invalid ac value {ac}.");
         }
 
         public string ToJson() => JsonConvert.SerializeObject(this);

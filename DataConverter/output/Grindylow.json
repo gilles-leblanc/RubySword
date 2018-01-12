@@ -1,1 +1,1 @@
-{"Name":"Grindylow","Brawn":3,"Agility":3,"Intellect":2,"Cunning":2,"Willpower":2,"Presence":2,"Soak":4,"WoundThreshold":3,"StrainThreshold":6,"MeleeDefense":0,"RangedDefense":0,"Talents":null,"Abilities":null,"Skills":["Perception","Stealth","Athletics"],"Equipment":null}
+{"Name":"Grindylow","Brawn":3,"Agility":3,"Intellect":2,"Cunning":2,"Willpower":2,"Presence":2,"Soak":4,"WoundThreshold":7,"StrainThreshold":6,"MeleeDefense":0,"RangedDefense":0,"Talents":null,"Abilities":null,"Skills":["Perception","Stealth","Athletics"],"Equipment":["spear","","bite","spear"]}

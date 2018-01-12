@@ -1,1 +1,1 @@
-{"Name":"Mummy, Unhallowed","Brawn":3,"Agility":2,"Intellect":1,"Cunning":3,"Willpower":3,"Presence":3,"Soak":7,"WoundThreshold":9,"StrainThreshold":15,"MeleeDefense":1,"RangedDefense":0,"Talents":null,"Abilities":null,"Skills":["Perception","Stealth"],"Equipment":null}
+{"Name":"Mummy, Unhallowed","Brawn":3,"Agility":2,"Intellect":1,"Cunning":3,"Willpower":3,"Presence":3,"Soak":5,"WoundThreshold":19,"StrainThreshold":19,"MeleeDefense":1,"RangedDefense":1,"Talents":null,"Abilities":null,"Skills":["Perception","Stealth"],"Equipment":["slam (1)"]}

@@ -1,1 +1,0 @@
-{"Name":"Ogre, Degenerate","Skills":["Climb","Perception"],"Ac":16,"Hp":34,"Str":26,"Dex":8,"Con":18,"Int":6,"Wis":10,"Cha":7,"Fortitude":8,"Reflex":0,"Will":1,"MeleeAttacks":[{"Ranged":false,"Name":null,"AttackBonus":0,"OriginalText":" slam +10 (1d6+8), bite +8 (1d6+4)"}],"RangedAttacks":[{"Ranged":true,"Name":null,"AttackBonus":0,"OriginalText":" rock +1 (1d6+8)"}]}

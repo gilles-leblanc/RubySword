@@ -1,1 +1,1 @@
-{"Name":"Centipede, Giant","Brawn":2,"Agility":3,"Intellect":0,"Cunning":1,"Willpower":2,"Presence":1,"Soak":5,"WoundThreshold":2,"StrainThreshold":6,"MeleeDefense":0,"RangedDefense":0,"Talents":null,"Abilities":null,"Skills":["Athletics","Perception","Stealth"],"Equipment":null}
+{"Name":"Centipede, Giant","Brawn":2,"Agility":3,"Intellect":0,"Cunning":1,"Willpower":2,"Presence":1,"Soak":3,"WoundThreshold":6,"StrainThreshold":6,"MeleeDefense":0,"RangedDefense":0,"Talents":null,"Abilities":null,"Skills":["Athletics","Perception","Stealth"],"Equipment":["bite"]}
