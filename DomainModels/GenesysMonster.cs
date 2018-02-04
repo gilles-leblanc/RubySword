@@ -7,9 +7,6 @@ namespace DomainModels
 {
     public class GenesysMonster
     {
-        private const int baseValue = 3;
-        private const int hardCap = 20;
-
         public string Name { get; set; }
 
         public int Brawn { get; set; }
