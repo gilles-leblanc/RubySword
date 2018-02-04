@@ -38,6 +38,7 @@ namespace DomainModels
                                          .Where(b => b.InnerHtml.ToLower().Contains(attackType.ToLower()))
                                          .Select(b => b?.NextSibling?.InnerText)
                                          .Where(b => !string.IsNullOrWhiteSpace(b))
+                                         .Distinct()
                                          .ToList();
 
             foreach (var possible in possibleValues)

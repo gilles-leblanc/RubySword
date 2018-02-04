@@ -58,7 +58,6 @@ namespace WebsiteGenerator
                 GenesysMonster genMonster = JsonConvert.DeserializeObject<GenesysMonster>(value);
 
                 char firstLetter = genMonster.Name[0];
-                firstLetter = firstLetter == '‎' ? '0' : firstLetter;       // temporary patch for weird error...
 
                 if (dictionary.ContainsKey(firstLetter))
                     dictionary[firstLetter].Add(genMonster);
@@ -111,8 +110,8 @@ namespace WebsiteGenerator
                                                  .Replace("{st}", m.StrainThreshold.ToString())
                                                  .Replace("{md}", m.MeleeDefense.ToString())
                                                  .Replace("{rd}", m.RangedDefense.ToString())
-                                                 .Replace("{skills}", string.Join(", ", m.Skills.OrderBy(x => x)))
-                                                 .Replace("{equipment}", string.Join(", ", m.Equipment.OrderBy(x => x)))
+                                                 .Replace("{skills}", string.Join(", ", m.Skills.Distinct().OrderBy(x => x)))
+                                                 .Replace("{equipment}", string.Join(", ", m.Equipment.Distinct().OrderBy(x => x)))
                                                  .Replace("{letter}", letter.ToString()));
         }
     }

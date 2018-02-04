@@ -15,6 +15,7 @@ namespace DomainModels
         public string Name { get; set; }
 
         public List<string> Skills { get; set; }
+        public List<string> Abilities { get; set; }
 
         private const string baseatk = "Atk";
         public int BaseAttackBonus { get; set; }
@@ -106,6 +107,7 @@ namespace DomainModels
                 BaseAttackBonus = GetStat(baseAttackBlock, baseatk);
 
             Skills = GetSkills(document);
+            Abilities = GetAbilities(document);
 
             var defensesBlock = GetBlock(document, DefensesBlockSpecification());
 
@@ -201,9 +203,10 @@ namespace DomainModels
             string hpHdLine = statsBlock.Descendants("b")
                                         .FirstOrDefault(d => d.InnerHtml.Contains(hp))
                                         ?.NextSibling
-                                        ?.InnerText;
+                                        ?.InnerText
+                                        ?.Replace("\n", "");
 
-            if (!string.IsNullOrWhiteSpace(hpHdLine) && !hpHdLine.ToLower().Contains("d"))
+            if (string.IsNullOrWhiteSpace(hpHdLine) || !hpHdLine.ToLower().Contains("d"))
             {
                 string innerText = statsBlock.InnerText;
                 string delimeter = "hp ";
@@ -239,6 +242,42 @@ namespace DomainModels
                                  .OrderBy(a => a);
 
             return skills.ToList();
+        }
+
+        private static List<string> GetAbilities(HtmlDocument document)
+        {
+            var abilities = new List<string>();
+
+            var abilityConversion = new Dictionary<string, string>();
+            abilityConversion.Add("poison", "Poison");
+            abilityConversion.Add("petrif", "Petrification");
+            abilityConversion.Add("disease", "Disease");
+            abilityConversion.Add("paralyz", "Paralyzation");
+            abilityConversion.Add("breath", "Breath Weapon");
+            abilityConversion.Add("energy drain", "Energy Drain");
+
+            try
+            {
+                var potentialAbilities = document.DocumentNode
+                                                 .Descendants("h4")
+                                                 .ToList();
+
+                potentialAbilities.ForEach(pa => abilityConversion.Keys
+                                                                  .ToList()
+                                                                  .ForEach(conv => 
+                                                                  {
+                                                                      if (pa.InnerText.Contains(conv))
+                                                                          abilities.Add(abilityConversion[conv]);
+                                                                  }));
+
+            }
+            catch (Exception)
+            {
+                // do not block monster creation when we can't read abilities since they are considered secondary
+                // and not a valid reason to prevent monster creation
+            }
+
+            return abilities;
         }
 
         public string ToJson() => JsonConvert.SerializeObject(this);

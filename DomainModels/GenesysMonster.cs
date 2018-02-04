@@ -70,6 +70,7 @@ namespace DomainModels
 
             // Skills, talents, abilities, etc.
             Skills = ConvertSkills(d20monster.Skills, skillConversionTable);
+            Abilities = d20monster.Abilities.Distinct().ToList();
 
             var attacks = d20monster.MeleeAttacks.Select(atk => d20monster.BaseAttackBonus > 0 ? 
                                                                 $"{atk.Name} ({Math.Min(Brawn, d20monster.BaseAttackBonus / 5)})" 
