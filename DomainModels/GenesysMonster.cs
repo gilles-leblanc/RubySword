@@ -72,13 +72,15 @@ namespace DomainModels
             Skills = ConvertSkills(d20monster.Skills, skillConversionTable);
             Abilities = d20monster.Abilities.Distinct().ToList();
 
-            var attacks = d20monster.MeleeAttacks.Select(atk => d20monster.BaseAttackBonus > 0 ? 
+            var attacks = d20monster.MeleeAttacks.Where(atk => !string.IsNullOrWhiteSpace(atk.Name))
+                                                 .Select(atk => d20monster.BaseAttackBonus > 0 ? 
                                                                 $"{atk.Name} ({Math.Min(Brawn, d20monster.BaseAttackBonus / 5)})" 
-                                                                : atk.Name).ToList();
+                                                                : $"{atk.Name} (0)").ToList();
 
-            attacks.AddRange(d20monster.RangedAttacks.Select(atk => d20monster.BaseAttackBonus > 0 ?
-                                                                    $"{atk.Name} ({Math.Min(Agility, d20monster.BaseAttackBonus / 5)}"
-                                                                    : atk.Name).ToList());
+            attacks.AddRange(d20monster.RangedAttacks.Where(atk => !string.IsNullOrWhiteSpace(atk.Name))
+                                                     .Select(atk => d20monster.BaseAttackBonus > 0 ?
+                                                                    $"{atk.Name} ({Math.Min(Agility, d20monster.BaseAttackBonus / 5)})"
+                                                                    : $"{atk.Name} (0)").ToList());
 
             Equipment = attacks ?? new List<string>();
         }               

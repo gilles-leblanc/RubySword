@@ -8,7 +8,7 @@ namespace DomainModels
     public class Attack
     {
         private static readonly string rxAttackDelimeter = @"(,)|((or|and) )/i";
-        private static readonly string rxNonAlpha = @"[^a-zA-Z]";
+        private static readonly string rxNonAlphaOrSpace = @"[^a-zA-Z ]";
 
         private const string melee = "Melee";
         private const string ranged = "Ranged";
@@ -46,13 +46,14 @@ namespace DomainModels
                 string[] substrings = Regex.Split(possible, rxAttackDelimeter);
 
                 substrings.Select(atk => string.Concat(atk.TakeWhile(c => c != '(')))
-                          .Select(atk => Regex.Replace(atk, rxNonAlpha, ""))
+                          .Select(atk => Regex.Replace(atk, rxNonAlphaOrSpace, ""))
+                          .Where(atk => !string.IsNullOrWhiteSpace(atk))
                           .ToList()
                           .ForEach(atk => attacks.Add(new Attack
                           {
                               OriginalText = possible,
                               Ranged = ranged,
-                              Name = atk,
+                              Name = atk.Trim(),
                           }));
             }
 
