@@ -266,7 +266,7 @@ namespace DomainModels
                                                                   .ToList()
                                                                   .ForEach(conv => 
                                                                   {
-                                                                      if (pa.InnerText.Contains(conv))
+                                                                      if (pa.InnerText.ToLower().Contains(conv))
                                                                           abilities.Add(abilityConversion[conv]);
                                                                   }));
 

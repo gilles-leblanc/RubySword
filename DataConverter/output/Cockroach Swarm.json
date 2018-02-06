@@ -1,1 +1,1 @@
-{"Name":"Cockroach Swarm","Brawn":1,"Agility":3,"Intellect":0,"Cunning":1,"Willpower":2,"Presence":1,"Soak":2,"WoundThreshold":9,"StrainThreshold":10,"MeleeDefense":0,"RangedDefense":0,"Talents":null,"Abilities":[],"Skills":["Athletics","Perception","Stealth"],"Equipment":[]}
+{"Name":"Cockroach Swarm","Brawn":1,"Agility":3,"Intellect":0,"Cunning":1,"Willpower":2,"Presence":1,"Soak":2,"WoundThreshold":9,"StrainThreshold":10,"MeleeDefense":0,"RangedDefense":0,"Talents":null,"Abilities":["Breath Weapon"],"Skills":["Athletics","Perception","Stealth"],"Equipment":[]}
